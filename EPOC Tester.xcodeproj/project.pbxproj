@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD6BD5C8159EDBB60040CAB6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6BD5C7159EDBB60040CAB6 /* Cocoa.framework */; };
+		CD6BD5D2159EDBB60040CAB6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD6BD5D0159EDBB60040CAB6 /* InfoPlist.strings */; };
+		CD6BD5D4159EDBB60040CAB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6BD5D3159EDBB60040CAB6 /* main.m */; };
+		CD6BD5D8159EDBB60040CAB6 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CD6BD5D6159EDBB60040CAB6 /* Credits.rtf */; };
+		CD6BD5DB159EDBB60040CAB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6BD5DA159EDBB60040CAB6 /* AppDelegate.m */; };
+		CD6BD5DE159EDBB60040CAB6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6BD5DC159EDBB60040CAB6 /* MainMenu.xib */; };
+		CD6BD5E6159EDBB60040CAB6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6BD5E5159EDBB60040CAB6 /* SenTestingKit.framework */; };
+		CD6BD5E7159EDBB60040CAB6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6BD5C7159EDBB60040CAB6 /* Cocoa.framework */; };
+		CD6BD5EF159EDBB60040CAB6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD6BD5ED159EDBB60040CAB6 /* InfoPlist.strings */; };
+		CD6BD5F2159EDBB60040CAB6 /* EPOC_TesterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6BD5F1159EDBB60040CAB6 /* EPOC_TesterTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD6BD5E8159EDBB60040CAB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD6BD5BA159EDBB60040CAB6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD6BD5C2159EDBB60040CAB6;
+			remoteInfo = "EPOC Tester";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CD6BD5C3159EDBB60040CAB6 /* EPOC Tester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EPOC Tester.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD6BD5C7159EDBB60040CAB6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		CD6BD5CA159EDBB60040CAB6 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		CD6BD5CB159EDBB60040CAB6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CD6BD5CC159EDBB60040CAB6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CD6BD5CF159EDBB60040CAB6 /* EPOC Tester-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EPOC Tester-Info.plist"; sourceTree = "<group>"; };
+		CD6BD5D1159EDBB60040CAB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CD6BD5D3159EDBB60040CAB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CD6BD5D5159EDBB60040CAB6 /* EPOC Tester-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EPOC Tester-Prefix.pch"; sourceTree = "<group>"; };
+		CD6BD5D7159EDBB60040CAB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		CD6BD5D9159EDBB60040CAB6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CD6BD5DA159EDBB60040CAB6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CD6BD5DD159EDBB60040CAB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		CD6BD5E4159EDBB60040CAB6 /* EPOC TesterTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EPOC TesterTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD6BD5E5159EDBB60040CAB6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		CD6BD5EC159EDBB60040CAB6 /* EPOC TesterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EPOC TesterTests-Info.plist"; sourceTree = "<group>"; };
+		CD6BD5EE159EDBB60040CAB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CD6BD5F0159EDBB60040CAB6 /* EPOC_TesterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPOC_TesterTests.h; sourceTree = "<group>"; };
+		CD6BD5F1159EDBB60040CAB6 /* EPOC_TesterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPOC_TesterTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD6BD5C0159EDBB60040CAB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD6BD5C8159EDBB60040CAB6 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD6BD5E0159EDBB60040CAB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD6BD5E6159EDBB60040CAB6 /* SenTestingKit.framework in Frameworks */,
+				CD6BD5E7159EDBB60040CAB6 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD6BD5B8159EDBB60040CAB6 = {
+			isa = PBXGroup;
+			children = (
+				CD6BD5CD159EDBB60040CAB6 /* EPOC Tester */,
+				CD6BD5EA159EDBB60040CAB6 /* EPOC TesterTests */,
+				CD6BD5C6159EDBB60040CAB6 /* Frameworks */,
+				CD6BD5C4159EDBB60040CAB6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD6BD5C4159EDBB60040CAB6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD6BD5C3159EDBB60040CAB6 /* EPOC Tester.app */,
+				CD6BD5E4159EDBB60040CAB6 /* EPOC TesterTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD6BD5C6159EDBB60040CAB6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD6BD5C7159EDBB60040CAB6 /* Cocoa.framework */,
+				CD6BD5E5159EDBB60040CAB6 /* SenTestingKit.framework */,
+				CD6BD5C9159EDBB60040CAB6 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD6BD5C9159EDBB60040CAB6 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD6BD5CA159EDBB60040CAB6 /* AppKit.framework */,
+				CD6BD5CB159EDBB60040CAB6 /* CoreData.framework */,
+				CD6BD5CC159EDBB60040CAB6 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		CD6BD5CD159EDBB60040CAB6 /* EPOC Tester */ = {
+			isa = PBXGroup;
+			children = (
+				CD6BD5D9159EDBB60040CAB6 /* AppDelegate.h */,
+				CD6BD5DA159EDBB60040CAB6 /* AppDelegate.m */,
+				CD6BD5DC159EDBB60040CAB6 /* MainMenu.xib */,
+				CD6BD5CE159EDBB60040CAB6 /* Supporting Files */,
+			);
+			path = "EPOC Tester";
+			sourceTree = "<group>";
+		};
+		CD6BD5CE159EDBB60040CAB6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD6BD5CF159EDBB60040CAB6 /* EPOC Tester-Info.plist */,
+				CD6BD5D0159EDBB60040CAB6 /* InfoPlist.strings */,
+				CD6BD5D3159EDBB60040CAB6 /* main.m */,
+				CD6BD5D5159EDBB60040CAB6 /* EPOC Tester-Prefix.pch */,
+				CD6BD5D6159EDBB60040CAB6 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD6BD5EA159EDBB60040CAB6 /* EPOC TesterTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD6BD5F0159EDBB60040CAB6 /* EPOC_TesterTests.h */,
+				CD6BD5F1159EDBB60040CAB6 /* EPOC_TesterTests.m */,
+				CD6BD5EB159EDBB60040CAB6 /* Supporting Files */,
+			);
+			path = "EPOC TesterTests";
+			sourceTree = "<group>";
+		};
+		CD6BD5EB159EDBB60040CAB6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD6BD5EC159EDBB60040CAB6 /* EPOC TesterTests-Info.plist */,
+				CD6BD5ED159EDBB60040CAB6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD6BD5C2159EDBB60040CAB6 /* EPOC Tester */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD6BD5F5159EDBB60040CAB6 /* Build configuration list for PBXNativeTarget "EPOC Tester" */;
+			buildPhases = (
+				CD6BD5BF159EDBB60040CAB6 /* Sources */,
+				CD6BD5C0159EDBB60040CAB6 /* Frameworks */,
+				CD6BD5C1159EDBB60040CAB6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EPOC Tester";
+			productName = "EPOC Tester";
+			productReference = CD6BD5C3159EDBB60040CAB6 /* EPOC Tester.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD6BD5E3159EDBB60040CAB6 /* EPOC TesterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD6BD5F8159EDBB60040CAB6 /* Build configuration list for PBXNativeTarget "EPOC TesterTests" */;
+			buildPhases = (
+				CD6BD5DF159EDBB60040CAB6 /* Sources */,
+				CD6BD5E0159EDBB60040CAB6 /* Frameworks */,
+				CD6BD5E1159EDBB60040CAB6 /* Resources */,
+				CD6BD5E2159EDBB60040CAB6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD6BD5E9159EDBB60040CAB6 /* PBXTargetDependency */,
+			);
+			name = "EPOC TesterTests";
+			productName = "EPOC TesterTests";
+			productReference = CD6BD5E4159EDBB60040CAB6 /* EPOC TesterTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD6BD5BA159EDBB60040CAB6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Matthew Daiter";
+			};
+			buildConfigurationList = CD6BD5BD159EDBB60040CAB6 /* Build configuration list for PBXProject "EPOC Tester" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CD6BD5B8159EDBB60040CAB6;
+			productRefGroup = CD6BD5C4159EDBB60040CAB6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD6BD5C2159EDBB60040CAB6 /* EPOC Tester */,
+				CD6BD5E3159EDBB60040CAB6 /* EPOC TesterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD6BD5C1159EDBB60040CAB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD6BD5D2159EDBB60040CAB6 /* InfoPlist.strings in Resources */,
+				CD6BD5D8159EDBB60040CAB6 /* Credits.rtf in Resources */,
+				CD6BD5DE159EDBB60040CAB6 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD6BD5E1159EDBB60040CAB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD6BD5EF159EDBB60040CAB6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CD6BD5E2159EDBB60040CAB6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD6BD5BF159EDBB60040CAB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD6BD5D4159EDBB60040CAB6 /* main.m in Sources */,
+				CD6BD5DB159EDBB60040CAB6 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD6BD5DF159EDBB60040CAB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD6BD5F2159EDBB60040CAB6 /* EPOC_TesterTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD6BD5E9159EDBB60040CAB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD6BD5C2159EDBB60040CAB6 /* EPOC Tester */;
+			targetProxy = CD6BD5E8159EDBB60040CAB6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CD6BD5D0159EDBB60040CAB6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD6BD5D1159EDBB60040CAB6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CD6BD5D6159EDBB60040CAB6 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD6BD5D7159EDBB60040CAB6 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		CD6BD5DC159EDBB60040CAB6 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD6BD5DD159EDBB60040CAB6 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		CD6BD5ED159EDBB60040CAB6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD6BD5EE159EDBB60040CAB6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD6BD5F3159EDBB60040CAB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CD6BD5F4159EDBB60040CAB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CD6BD5F6159EDBB60040CAB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EPOC Tester/EPOC Tester-Prefix.pch";
+				INFOPLIST_FILE = "EPOC Tester/EPOC Tester-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CD6BD5F7159EDBB60040CAB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EPOC Tester/EPOC Tester-Prefix.pch";
+				INFOPLIST_FILE = "EPOC Tester/EPOC Tester-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CD6BD5F9159EDBB60040CAB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EPOC Tester.app/Contents/MacOS/EPOC Tester";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EPOC Tester/EPOC Tester-Prefix.pch";
+				INFOPLIST_FILE = "EPOC TesterTests/EPOC TesterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		CD6BD5FA159EDBB60040CAB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/EPOC Tester.app/Contents/MacOS/EPOC Tester";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EPOC Tester/EPOC Tester-Prefix.pch";
+				INFOPLIST_FILE = "EPOC TesterTests/EPOC TesterTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD6BD5BD159EDBB60040CAB6 /* Build configuration list for PBXProject "EPOC Tester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD6BD5F3159EDBB60040CAB6 /* Debug */,
+				CD6BD5F4159EDBB60040CAB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD6BD5F5159EDBB60040CAB6 /* Build configuration list for PBXNativeTarget "EPOC Tester" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD6BD5F6159EDBB60040CAB6 /* Debug */,
+				CD6BD5F7159EDBB60040CAB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CD6BD5F8159EDBB60040CAB6 /* Build configuration list for PBXNativeTarget "EPOC TesterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD6BD5F9159EDBB60040CAB6 /* Debug */,
+				CD6BD5FA159EDBB60040CAB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD6BD5BA159EDBB60040CAB6 /* Project object */;
+}
