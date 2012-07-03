@@ -26,7 +26,7 @@
     //wait five seconds before doing anything
     
     for (int i = 0; i < 2; i++){
-        sleep(2);
+        sleep(1);
     }
     
     AXUIElementRef systemWideElement = [self frontMostApp];
