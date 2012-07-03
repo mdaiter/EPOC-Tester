@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GraphDisplay.h"
+#import "SystemMonitor.h"
 
-@interface PercentDisplay : NSObject
+@interface PercentDisplay : NSViewController{
+@private
+    NSStatusItem* statusItem;
+    GraphDisplay *graph;
+    SystemMonitor *s;
+}
+
+-(void)update:(id)sender;
+-(void)display;
 
 @end

@@ -7,7 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CorePlot/CorePlot.h>
 
-@interface GraphDisplay : NSObject
+@interface GraphDisplay : NSViewController <NSPopoverDelegate, CPTPlotDataSource>{
+@private
+    NSPopover *graphView;
+    CPTGraphHostingView* hostView;
+    CPTGraph* graph;
+    CPTTheme* theme;
+    CGRect graphRect;
+    BOOL firstTime;
+    CPTPlot* plotData;
+}
+
+-(NSPopover*)getPopover;
+
+-(void)setCurrentRect;
+
+-(void)initGraph;
 
 @end

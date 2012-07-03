@@ -7,8 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "PercentDisplay.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate>{
+    PercentDisplay* percentView;
+}
 
 @property (assign) IBOutlet NSWindow *window;
 

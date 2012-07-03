@@ -15,4 +15,9 @@
     // Insert code here to initialize your application
 }
 
+-(void)awakeFromNib{
+    percentView = [[PercentDisplay alloc] init];
+    [percentView display];
+}
+
 @end
