@@ -20,8 +20,33 @@
         graphView.delegate = self;
         [graphView setContentSize:NSMakeSize(400.0f, 400.0f)];
         firstTime = FALSE;
+        
+        s = [[SystemMonitor alloc] init];
+        dataPoints = [[NSMutableArray alloc] init];
+        [self generatePoints];
+        
+        date = [[NSDate alloc] initWithTimeIntervalSinceNow:0];
     }
     return self;
+}
+
+-(void)generatePoints{
+    NSDateFormatter* formatter;
+    NSString* timeString;
+    formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"HH:mm, MM-dd-yyyy"];
+    
+    timeString = [formatter stringFromDate:[NSDate date]];
+    
+    NSTimeInterval timeStamp = [[NSDate date] timeIntervalSinceDate: date];
+    
+    NSNumber *timeStampNum = [NSNumber numberWithDouble:timeStamp];
+    
+    NSDictionary* newVal = [NSDictionary dictionaryWithObjectsAndKeys:[[s getMood] objectForKey:@"Angry"], @"Anger", [NSNumber numberWithDouble:2.0f], @"Time", nil];
+    [dataPoints addObject:newVal];
+    
+    NSDictionary* newVal2 = [NSDictionary dictionaryWithObjectsAndKeys:[[s getMood] objectForKey:@"Happy"], @"Anger", [NSNumber numberWithDouble:3.0f], @"Time", nil];
+    [dataPoints addObject:newVal2];
 }
 
 -(NSPopover*)getPopover{
@@ -71,12 +96,12 @@
         
         CPTXYAxisSet *axisSet = (CPTXYAxisSet*)graph.axisSet;
         
-        axisSet.xAxis.majorIntervalLength = CPTDecimalFromFloat(10);
+        axisSet.xAxis.majorIntervalLength = CPTDecimalFromFloat(1);
         axisSet.xAxis.minorTicksPerInterval = 1;
         axisSet.xAxis.title = @"Time";
         //axisSet.xAxis.titleOffset = 40.0f;
         
-        axisSet.yAxis.majorIntervalLength = CPTDecimalFromFloat(10);
+        axisSet.yAxis.majorIntervalLength = CPTDecimalFromFloat(1);
         axisSet.yAxis.minorTicksPerInterval = 1;
         axisSet.yAxis.title = @"Happiness";
         //axisSet.xAxis.titleOffset = 30.0f;
@@ -88,22 +113,24 @@
         [graph addPlot:dataSource];
         
         //[plotSpace scaleToFitPlots:[NSArray arrayWithObject:dataSource]];
-        
-        
-        
     }
 }
 
--(void)drawLines{
-    
-}
-
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot{
-    return 12;
+    NSLog(@"%lu", [[s getMood] count]);
+    return [[s getMood] count];
 }
 
 -(NSNumber*)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index{
-    return [NSNumber numberWithInt:3];
+    NSDictionary* sample = [dataPoints objectAtIndex:index];
+    NSLog(@"Being asked for %@", sample);
+    
+    if (fieldEnum == CPTScatterPlotFieldX){
+        return [sample valueForKey:@"Time"];
+    }
+    else{
+        return [sample valueForKey:@"Anger"];
+    }
 }
 
 @end

@@ -16,8 +16,11 @@
         //Detect if any applications switched
         [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(getCurrApp:) name:NSWorkspaceDidActivateApplicationNotification object:nil];
 
+        NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(getCurrApp:) userInfo:nil repeats:YES];
+        
         app = [[NSRunningApplication alloc] init];
         
+        mood = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:[NSNumber numberWithInt:2], [NSNumber numberWithDouble:2], nil] forKeys:[[NSArray alloc] initWithObjects:@"Angry", @"Happy", nil]];
     }
     return self;
 }
@@ -31,22 +34,15 @@
     }
     
     //If we need to ever manipulate windows
-    if (![app.localizedName isEqualToString:@""]){
+    if (![app.localizedName isEqualToString:@"EPOC Tester"]){
         AXUIElementCopyAttributeValue(systemWideElement, kAXFocusedWindowAttribute, (CFTypeRef*)&frontMostWindow);
         AXUIElementCopyAttributeValue(frontMostWindow, kAXTitleAttribute, (CFTypeRef*)&windowTitle);
-        
-        
-        
-        CFStringRef test = (CFStringRef)nil;
-        
-        if (test == NULL || CFStringGetLength(test) == 0){
+                
+        //if (windowTitle == NULL || CFStringGetLength(windowTitle) == 0){
             //Show strings
-            //CFShow(windowTitle);
-            NSLog((__bridge NSString*)test);
-        }
+            CFShow(windowTitle);
+        //}
     }
-    
-    SpotifyHandler *s = [[SpotifyHandler alloc] init];
 }
 
 

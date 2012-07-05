@@ -32,4 +32,8 @@
     return [[NSDictionary alloc] init];
 }
 
+-(NSDictionary*)getMood{
+    return mood;
+}
+
 @end

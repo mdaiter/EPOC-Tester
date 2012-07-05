@@ -8,13 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "GraphDisplay.h"
-#import "SystemMonitor.h"
 
 @interface PercentDisplay : NSViewController{
 @private
     NSStatusItem* statusItem;
     GraphDisplay *graph;
-    SystemMonitor *s;
 }
 
 -(void)update:(id)sender;

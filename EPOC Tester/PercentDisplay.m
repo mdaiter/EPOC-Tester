@@ -13,7 +13,6 @@
 -(id)init{
     if ([super initWithNibName:@"PercentDisplay" bundle:nil]){
         graph = [[GraphDisplay alloc] init];
-        s = [[SystemMonitor alloc] init];
     }
     return self;
 }

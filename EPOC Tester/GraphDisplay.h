@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CorePlot/CorePlot.h>
+#import "SystemMonitor.h"
 
 @interface GraphDisplay : NSViewController <NSPopoverDelegate, CPTPlotDataSource>{
 @private
@@ -18,6 +19,9 @@
     CGRect graphRect;
     BOOL firstTime;
     CPTPlot* plotData;
+    SystemMonitor* s;
+    NSMutableArray* dataPoints;
+    NSDate* date;
 }
 
 -(NSPopover*)getPopover;
