@@ -7,6 +7,7 @@
 //
 
 #import "SystemMonitor.h"
+#import "SpotifyHandler.h"
 
 @implementation SystemMonitor
 
@@ -14,21 +15,14 @@
     if ([super init]) {
         //Detect if any applications switched
         [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(getCurrApp:) name:NSWorkspaceDidActivateApplicationNotification object:nil];
-        
-        timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(getCurrApp:) userInfo:nil repeats:YES];
-        
+
         app = [[NSRunningApplication alloc] init];
+        
     }
     return self;
 }
 
 -(void)getCurrApp:(NSTimer*) theTimer{
-    //wait five seconds before doing anything
-    
-    for (int i = 0; i < 2; i++){
-        sleep(1);
-    }
-    
     AXUIElementRef systemWideElement = [self frontMostApp];
     AXUIElementRef frontMostWindow;
     CFStringRef windowTitle;
@@ -37,14 +31,24 @@
     }
     
     //If we need to ever manipulate windows
-    if (![app.localizedName isEqualToString:@"EPOC Tester"]){
+    if (![app.localizedName isEqualToString:@""]){
         AXUIElementCopyAttributeValue(systemWideElement, kAXFocusedWindowAttribute, (CFTypeRef*)&frontMostWindow);
         AXUIElementCopyAttributeValue(frontMostWindow, kAXTitleAttribute, (CFTypeRef*)&windowTitle);
-    
-        //Show strings
-        CFShow(windowTitle);
+        
+        
+        
+        CFStringRef test = (CFStringRef)nil;
+        
+        if (test == NULL || CFStringGetLength(test) == 0){
+            //Show strings
+            //CFShow(windowTitle);
+            NSLog((__bridge NSString*)test);
+        }
     }
+    
+    SpotifyHandler *s = [[SpotifyHandler alloc] init];
 }
+
 
 -(AXUIElementRef)frontMostApp{
     pid_t pid;

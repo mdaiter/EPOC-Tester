@@ -7,11 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Handler.h"
 
-@interface SystemMonitor : NSObject{
-    pid_t currentAppPID;
-    AXUIElementRef element;
-    NSTimer* timer;
+@interface SystemMonitor : Handler{
     NSRunningApplication *app;
 }
 

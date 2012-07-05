@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD1AAFBE15A24DFC0061D8FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD1AAFBD15A24DFC0061D8FE /* QuartzCore.framework */; };
+		CD4CCBA015A5EFD100CDAC7C /* Handler.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4CCB9F15A5EFD100CDAC7C /* Handler.m */; };
 		CD50D25215A2379F00E48536 /* PercentDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = CD50D25115A2379F00E48536 /* PercentDisplay.m */; };
 		CD50D25615A2397B00E48536 /* GraphDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = CD50D25515A2397B00E48536 /* GraphDisplay.m */; };
 		CD50D25815A2420B00E48536 /* PercentDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD50D25715A2420B00E48536 /* PercentDisplay.xib */; };
@@ -21,6 +22,9 @@
 		CD6BD5E7159EDBB60040CAB6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6BD5C7159EDBB60040CAB6 /* Cocoa.framework */; };
 		CD6BD5EF159EDBB60040CAB6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD6BD5ED159EDBB60040CAB6 /* InfoPlist.strings */; };
 		CD6BD5F2159EDBB60040CAB6 /* EPOC_TesterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6BD5F1159EDBB60040CAB6 /* EPOC_TesterTests.m */; };
+		CD93482115A4A59C00F90139 /* ResponseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD93482015A4A59C00F90139 /* ResponseManager.m */; };
+		CD93482415A4A5B300F90139 /* SpotifyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CD93482315A4A5B300F90139 /* SpotifyHandler.m */; };
+		CD93483615A4A8DC00F90139 /* CocoaLibSpotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD93481C15A4A4E100F90139 /* CocoaLibSpotify.framework */; };
 		CD95D2A015A34D0C0092EC7C /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD1AAFBA15A24B9F0061D8FE /* CorePlot.framework */; };
 		CD95D2C315A37C640092EC7C /* SystemMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = CD95D2C215A37C630092EC7C /* SystemMonitor.m */; };
 /* End PBXBuildFile section */
@@ -32,6 +36,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = CD6BD5C2159EDBB60040CAB6;
 			remoteInfo = "EPOC Tester";
+		};
+		CD93481B15A4A4E100F90139 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD93481215A4A4E100F90139 /* CocoaLibSpotify Mac Framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 503D630F13258041007772CA;
+			remoteInfo = CocoaLibSpotify;
+		};
+		CD93481D15A4A4E100F90139 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD93481215A4A4E100F90139 /* CocoaLibSpotify Mac Framework.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 504E4934155AA85400E1C0F7;
+			remoteInfo = CocoaLSTests;
+		};
+		CD93483415A4A87A00F90139 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD93481215A4A4E100F90139 /* CocoaLibSpotify Mac Framework.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 503D630E13258041007772CA;
+			remoteInfo = CocoaLibSpotify;
 		};
 		CD95D2AA15A34D9E0092EC7C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -59,6 +84,8 @@
 /* Begin PBXFileReference section */
 		CD1AAFBA15A24B9F0061D8FE /* CorePlot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CorePlot.framework; path = ../../Downloads/CorePlot_1.0/Binaries/MacOS/CorePlot.framework; sourceTree = "<group>"; };
 		CD1AAFBD15A24DFC0061D8FE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CD4CCB9E15A5EFD100CDAC7C /* Handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Handler.h; sourceTree = "<group>"; };
+		CD4CCB9F15A5EFD100CDAC7C /* Handler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Handler.m; sourceTree = "<group>"; };
 		CD50D25015A2379F00E48536 /* PercentDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PercentDisplay.h; sourceTree = "<group>"; };
 		CD50D25115A2379F00E48536 /* PercentDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PercentDisplay.m; sourceTree = "<group>"; };
 		CD50D25415A2397B00E48536 /* GraphDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphDisplay.h; sourceTree = "<group>"; };
@@ -83,6 +110,12 @@
 		CD6BD5EE159EDBB60040CAB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CD6BD5F0159EDBB60040CAB6 /* EPOC_TesterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPOC_TesterTests.h; sourceTree = "<group>"; };
 		CD6BD5F1159EDBB60040CAB6 /* EPOC_TesterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPOC_TesterTests.m; sourceTree = "<group>"; };
+		CD93481215A4A4E100F90139 /* CocoaLibSpotify Mac Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CocoaLibSpotify Mac Framework.xcodeproj"; path = "../../../Downloads/spotify-cocoalibspotify-3be59f4/Mac Framework/CocoaLibSpotify Mac Framework.xcodeproj"; sourceTree = "<group>"; };
+		CD93481F15A4A59C00F90139 /* ResponseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseManager.h; sourceTree = "<group>"; };
+		CD93482015A4A59C00F90139 /* ResponseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseManager.m; sourceTree = "<group>"; };
+		CD93482215A4A5B300F90139 /* SpotifyHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotifyHandler.h; sourceTree = "<group>"; };
+		CD93482315A4A5B300F90139 /* SpotifyHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotifyHandler.m; sourceTree = "<group>"; };
+		CD93483715A4A91E00F90139 /* libspotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libspotify.framework; path = "../../Downloads/spotify-cocoalibspotify-3be59f4/Mac Framework/libspotify-12.1.45-Darwin-universal/libspotify.framework"; sourceTree = "<group>"; };
 		CD95D2A115A34D9E0092EC7C /* CorePlot.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CorePlot.xcodeproj; path = ../../../Downloads/CorePlot_1.0/Source/framework/CorePlot.xcodeproj; sourceTree = "<group>"; };
 		CD95D2C115A37C630092EC7C /* SystemMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemMonitor.h; sourceTree = "<group>"; };
 		CD95D2C215A37C630092EC7C /* SystemMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMonitor.m; sourceTree = "<group>"; };
@@ -93,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD93483615A4A8DC00F90139 /* CocoaLibSpotify.framework in Frameworks */,
 				CD95D2A015A34D0C0092EC7C /* CorePlot.framework in Frameworks */,
 				CD1AAFBE15A24DFC0061D8FE /* QuartzCore.framework in Frameworks */,
 				CD6BD5C8159EDBB60040CAB6 /* Cocoa.framework in Frameworks */,
@@ -114,6 +148,7 @@
 		CD6BD5B8159EDBB60040CAB6 = {
 			isa = PBXGroup;
 			children = (
+				CD93483715A4A91E00F90139 /* libspotify.framework */,
 				CD6BD5CD159EDBB60040CAB6 /* EPOC Tester */,
 				CD6BD5EA159EDBB60040CAB6 /* EPOC TesterTests */,
 				CD6BD5C6159EDBB60040CAB6 /* Frameworks */,
@@ -155,6 +190,7 @@
 		CD6BD5CD159EDBB60040CAB6 /* EPOC Tester */ = {
 			isa = PBXGroup;
 			children = (
+				CD93481215A4A4E100F90139 /* CocoaLibSpotify Mac Framework.xcodeproj */,
 				CD95D2A115A34D9E0092EC7C /* CorePlot.xcodeproj */,
 				CD6BD5D9159EDBB60040CAB6 /* AppDelegate.h */,
 				CD6BD5DA159EDBB60040CAB6 /* AppDelegate.m */,
@@ -162,6 +198,12 @@
 				CD50D25515A2397B00E48536 /* GraphDisplay.m */,
 				CD95D2C115A37C630092EC7C /* SystemMonitor.h */,
 				CD95D2C215A37C630092EC7C /* SystemMonitor.m */,
+				CD93481F15A4A59C00F90139 /* ResponseManager.h */,
+				CD93482015A4A59C00F90139 /* ResponseManager.m */,
+				CD93482215A4A5B300F90139 /* SpotifyHandler.h */,
+				CD93482315A4A5B300F90139 /* SpotifyHandler.m */,
+				CD4CCB9E15A5EFD100CDAC7C /* Handler.h */,
+				CD4CCB9F15A5EFD100CDAC7C /* Handler.m */,
 				CD50D25715A2420B00E48536 /* PercentDisplay.xib */,
 				CD50D25015A2379F00E48536 /* PercentDisplay.h */,
 				CD50D25115A2379F00E48536 /* PercentDisplay.m */,
@@ -202,6 +244,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CD93481315A4A4E100F90139 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD93481C15A4A4E100F90139 /* CocoaLibSpotify.framework */,
+				CD93481E15A4A4E100F90139 /* CocoaLibSpotify Test Container.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CD95D2A215A34D9E0092EC7C /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +276,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CD93483515A4A87A00F90139 /* PBXTargetDependency */,
 				CD95D2AF15A34E080092EC7C /* PBXTargetDependency */,
 			);
 			name = "EPOC Tester";
@@ -272,6 +324,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = CD93481315A4A4E100F90139 /* Products */;
+					ProjectRef = CD93481215A4A4E100F90139 /* CocoaLibSpotify Mac Framework.xcodeproj */;
+				},
+				{
 					ProductGroup = CD95D2A215A34D9E0092EC7C /* Products */;
 					ProjectRef = CD95D2A115A34D9E0092EC7C /* CorePlot.xcodeproj */;
 				},
@@ -285,6 +341,21 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		CD93481C15A4A4E100F90139 /* CocoaLibSpotify.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CocoaLibSpotify.framework;
+			remoteRef = CD93481B15A4A4E100F90139 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CD93481E15A4A4E100F90139 /* CocoaLibSpotify Test Container.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			name = "CocoaLibSpotify Test Container.app";
+			path = CocoaLSTests.app;
+			remoteRef = CD93481D15A4A4E100F90139 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		CD95D2AB15A34D9E0092EC7C /* CorePlot.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -349,6 +420,9 @@
 				CD50D25215A2379F00E48536 /* PercentDisplay.m in Sources */,
 				CD50D25615A2397B00E48536 /* GraphDisplay.m in Sources */,
 				CD95D2C315A37C640092EC7C /* SystemMonitor.m in Sources */,
+				CD93482115A4A59C00F90139 /* ResponseManager.m in Sources */,
+				CD93482415A4A5B300F90139 /* SpotifyHandler.m in Sources */,
+				CD4CCBA015A5EFD100CDAC7C /* Handler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +441,11 @@
 			isa = PBXTargetDependency;
 			target = CD6BD5C2159EDBB60040CAB6 /* EPOC Tester */;
 			targetProxy = CD6BD5E8159EDBB60040CAB6 /* PBXContainerItemProxy */;
+		};
+		CD93483515A4A87A00F90139 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaLibSpotify;
+			targetProxy = CD93483415A4A87A00F90139 /* PBXContainerItemProxy */;
 		};
 		CD95D2AF15A34E080092EC7C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -477,7 +556,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/CorePlot_1.0/Binaries/MacOS\"",
+					"\"$(SRCROOT)/../../Downloads/spotify-cocoalibspotify-3be59f4/Mac Framework/libspotify-12.1.45-Darwin-universal\"",
 				);
+				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EPOC Tester/EPOC Tester-Prefix.pch";
 				GCC_VERSION = "";
@@ -494,6 +575,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/CorePlot_1.0/Binaries/MacOS\"",
+					"\"$(SRCROOT)/../../Downloads/spotify-cocoalibspotify-3be59f4/Mac Framework/libspotify-12.1.45-Darwin-universal\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EPOC Tester/EPOC Tester-Prefix.pch";

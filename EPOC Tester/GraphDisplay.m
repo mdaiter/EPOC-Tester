@@ -48,11 +48,10 @@
         //Create actual graph foundation
         graph = [[CPTXYGraph alloc] initWithFrame:hostView.bounds];
         hostView.hostedGraph = graph;
-        graph.paddingBottom = 0.0f;
-        graph.paddingLeft = 0.0f;
-        graph.paddingRight = 0.0f;
-        graph.paddingTop = 0.0f;
-        graph.axisSet = nil;
+        graph.paddingBottom = 10.0f;
+        graph.paddingLeft = 10.0f;
+        graph.paddingRight = 10.0f;
+        graph.paddingTop = 10.0f;
         graph.title = @"Brainwave Measure";
     
         CPTMutableTextStyle *textStyle = [CPTMutableTextStyle textStyle];
@@ -61,23 +60,34 @@
         textStyle.fontSize = 16.0f;
     
         graph.titleTextStyle = textStyle;
-        graph.titlePlotAreaFrameAnchor =CPTRectAnchorTop;
+        graph.titlePlotAreaFrameAnchor = CPTRectAnchorTop;
         graph.titleDisplacement = CGPointMake(0.0f, -12.0f);
-    
-        theme = [CPTTheme themeNamed:kCPTDarkGradientTheme];
-        [graph applyTheme:theme];
-        
+            
         //Create plot space
         CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace*) graph.defaultPlotSpace;
         plotSpace.allowsUserInteraction = YES;
+        plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0) length:CPTDecimalFromFloat(100)];
+        plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0) length:CPTDecimalFromFloat(100)];
         
+        CPTXYAxisSet *axisSet = (CPTXYAxisSet*)graph.axisSet;
+        
+        axisSet.xAxis.majorIntervalLength = CPTDecimalFromFloat(10);
+        axisSet.xAxis.minorTicksPerInterval = 1;
+        axisSet.xAxis.title = @"Time";
+        //axisSet.xAxis.titleOffset = 40.0f;
+        
+        axisSet.yAxis.majorIntervalLength = CPTDecimalFromFloat(10);
+        axisSet.yAxis.minorTicksPerInterval = 1;
+        axisSet.yAxis.title = @"Happiness";
+        //axisSet.xAxis.titleOffset = 30.0f;
         
         CPTScatterPlot *dataSource = [[CPTScatterPlot alloc] init];
         dataSource.dataSource = self;
+        dataSource.identifier = @"Happiness";
         
-        [graph addPlot:dataSource toPlotSpace:plotSpace];
+        [graph addPlot:dataSource];
         
-        [plotSpace scaleToFitPlots:[NSArray arrayWithObject:dataSource]];
+        //[plotSpace scaleToFitPlots:[NSArray arrayWithObject:dataSource]];
         
         
         
