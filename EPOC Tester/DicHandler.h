@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FaceComComm.h"
 
 @interface DicHandler : NSObject{
 @private
@@ -14,6 +15,8 @@
     NSMutableArray* angerArray;
     NSMutableArray* happyArray;
     NSMutableArray* timeArray;
+
+    FaceComComm *faceCom;
     
     NSMutableArray* emotionsKeys;
     

@@ -12,6 +12,7 @@
 
 -(id)init{
     if ([super init]) {
+        //NSPopover allocatd space and initiated
         graphView = [[NSPopover alloc] init];
         graphView.appearance = NSPopoverAppearanceMinimal;
         graphView.animates = TRUE;
