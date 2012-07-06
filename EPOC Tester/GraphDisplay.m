@@ -77,19 +77,17 @@
         
         CPTXYAxisSet *axisSet = (CPTXYAxisSet*)graph.axisSet;
         
-        axisSet.xAxis.majorIntervalLength = CPTDecimalFromFloat(10);
+        axisSet.xAxis.majorIntervalLength = CPTDecimalFromFloat(5);
         axisSet.xAxis.minorTicksPerInterval = 1;
         axisSet.xAxis.title = @"Time";
         //axisSet.xAxis.titleOffset = 40.0f;
         
         axisSet.yAxis.majorIntervalLength = CPTDecimalFromFloat(10);
         axisSet.yAxis.minorTicksPerInterval = 1;
-        axisSet.yAxis.title = @"Happiness";
+        axisSet.yAxis.title = @"Emotions";
         //axisSet.xAxis.titleOffset = 30.0f;
         
         [self addDataToGraph];
-                        
-        //[plotSpace scaleToFitPlots:[NSArray arrayWithObject:dataSource]];
     }
 }
 
@@ -97,6 +95,13 @@
     CPTScatterPlot *data = [[CPTScatterPlot alloc] init];
     data.dataSource = self;
     data.identifier = str;
+    
+    CPTMutableLineStyle *lineStyle = [CPTMutableLineStyle lineStyle];
+    lineStyle.lineColor = [CPTColor redColor];
+    
+    data.dataLineStyle = lineStyle;
+    
+    [[graph defaultPlotSpace] scaleToFitPlots:[NSArray arrayWithObject:data]];
     
     return data;
 }
