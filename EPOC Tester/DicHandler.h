@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FaceComComm.h"
+#import "FacialRecognition.h"
 
 @interface DicHandler : NSObject{
 @private
@@ -16,7 +16,7 @@
     NSMutableArray* happyArray;
     NSMutableArray* timeArray;
 
-    FaceComComm *faceCom;
+    FacialRecognition *faceRec;
     
     NSMutableArray* emotionsKeys;
     

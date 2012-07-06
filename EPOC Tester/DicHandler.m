@@ -30,8 +30,7 @@
         
         [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(generatePoints) userInfo:nil repeats:YES];
         
-        faceCom = [[FaceComComm alloc] init];
-            
+        faceRec = [[FacialRecognition alloc] init];
     }
     return self;
 }
