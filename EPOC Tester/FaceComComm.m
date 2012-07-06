@@ -57,6 +57,10 @@
     NSString *smiling = [[[[[[[feed objectForKey:@"photos"] objectAtIndex:0] objectForKey:@"tags"] objectAtIndex:0] objectForKey:@"attributes"] objectForKey:@"smiling"] objectForKey:@"value"];
     
     NSLog(@"Smiling is: %@", smiling);
+    
+    NSString *mood = [[[[[[[feed objectForKey:@"photos"] objectAtIndex:0] objectForKey:@"tags"] objectAtIndex:0] objectForKey:@"attributes"] objectForKey:@"mood"] objectForKey:@"value"];
+    
+    NSLog(@"Mood is: %@", mood);
 }
 
 @end

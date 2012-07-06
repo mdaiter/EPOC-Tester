@@ -16,7 +16,6 @@
 
 -(id)init{
     if ([super init]){
-        smileRec = [[SmileRecognition alloc] init];
         eyeRec = [[EyeRecognition alloc] init];
         faceComComm = [[FaceComComm alloc] init];
     }

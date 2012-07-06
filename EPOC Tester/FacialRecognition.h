@@ -7,12 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SmileRecognition.h"
 #import "EyeRecognition.h"
 #import "FaceComComm.h"
 
 @interface FacialRecognition : NSObject{
-    SmileRecognition* smileRec;
     EyeRecognition* eyeRec;
     FaceComComm *faceComComm;
 }
