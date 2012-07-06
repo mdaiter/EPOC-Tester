@@ -16,11 +16,11 @@
         //Detect if any applications switched
         [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(getCurrApp:) name:NSWorkspaceDidActivateApplicationNotification object:nil];
 
-        NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(getCurrApp:) userInfo:nil repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(getCurrApp:) userInfo:nil repeats:YES];
         
         app = [[NSRunningApplication alloc] init];
         
-        mood = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:[NSNumber numberWithInt:2], [NSNumber numberWithDouble:2], nil] forKeys:[[NSArray alloc] initWithObjects:@"Angry", @"Happy", nil]];
+        mood = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:[NSNumber numberWithInt:2], nil] forKeys:[[NSArray alloc] initWithObjects:@"Angry", nil]];
     }
     return self;
 }

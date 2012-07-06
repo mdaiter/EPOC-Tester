@@ -21,32 +21,13 @@
         [graphView setContentSize:NSMakeSize(400.0f, 400.0f)];
         firstTime = FALSE;
         
+        //Instantiate other objects necessary
         s = [[SystemMonitor alloc] init];
-        dataPoints = [[NSMutableArray alloc] init];
-        [self generatePoints];
         
-        date = [[NSDate alloc] initWithTimeIntervalSinceNow:0];
+        dicHand = [[DicHandler alloc] init];
+        
     }
     return self;
-}
-
--(void)generatePoints{
-    NSDateFormatter* formatter;
-    NSString* timeString;
-    formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"HH:mm, MM-dd-yyyy"];
-    
-    timeString = [formatter stringFromDate:[NSDate date]];
-    
-    NSTimeInterval timeStamp = [[NSDate date] timeIntervalSinceDate: date];
-    
-    NSNumber *timeStampNum = [NSNumber numberWithDouble:timeStamp];
-    
-    NSDictionary* newVal = [NSDictionary dictionaryWithObjectsAndKeys:[[s getMood] objectForKey:@"Angry"], @"Anger", [NSNumber numberWithDouble:2.0f], @"Time", nil];
-    [dataPoints addObject:newVal];
-    
-    NSDictionary* newVal2 = [NSDictionary dictionaryWithObjectsAndKeys:[[s getMood] objectForKey:@"Happy"], @"Anger", [NSNumber numberWithDouble:3.0f], @"Time", nil];
-    [dataPoints addObject:newVal2];
 }
 
 -(NSPopover*)getPopover{
@@ -96,41 +77,61 @@
         
         CPTXYAxisSet *axisSet = (CPTXYAxisSet*)graph.axisSet;
         
-        axisSet.xAxis.majorIntervalLength = CPTDecimalFromFloat(1);
+        axisSet.xAxis.majorIntervalLength = CPTDecimalFromFloat(10);
         axisSet.xAxis.minorTicksPerInterval = 1;
         axisSet.xAxis.title = @"Time";
         //axisSet.xAxis.titleOffset = 40.0f;
         
-        axisSet.yAxis.majorIntervalLength = CPTDecimalFromFloat(1);
+        axisSet.yAxis.majorIntervalLength = CPTDecimalFromFloat(10);
         axisSet.yAxis.minorTicksPerInterval = 1;
         axisSet.yAxis.title = @"Happiness";
         //axisSet.xAxis.titleOffset = 30.0f;
         
-        CPTScatterPlot *dataSource = [[CPTScatterPlot alloc] init];
-        dataSource.dataSource = self;
-        dataSource.identifier = @"Happiness";
-        
-        [graph addPlot:dataSource];
-        
+        [self addDataToGraph];
+                        
         //[plotSpace scaleToFitPlots:[NSArray arrayWithObject:dataSource]];
     }
 }
 
+-(CPTScatterPlot*)createScatterPlotWithId:(NSString*)str{
+    CPTScatterPlot *data = [[CPTScatterPlot alloc] init];
+    data.dataSource = self;
+    data.identifier = str;
+    
+    return data;
+}
+
+//Add each plot to the graphspace
+-(void)addDataToGraph{
+    for (NSString* st in [dicHand getEmotionsKeys]) {
+        if (![st isEqualToString:@"Time"]){
+            CPTScatterPlot *tempData = [self createScatterPlotWithId:st];
+            [graph addPlot:tempData];
+        }
+    }
+}
+
+//Amount of points to be plotted in graph
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot{
-    NSLog(@"%lu", [[s getMood] count]);
-    return [[s getMood] count];
+    NSLog(@"Count of records to be graphed: %lu \n for this plot: %@", [[[dicHand getDicHandler] objectForKey:[plot identifier]] count], [plot identifier]);
+    return [[[dicHand getDicHandler] objectForKey:[plot identifier]] count];
 }
 
 -(NSNumber*)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index{
-    NSDictionary* sample = [dataPoints objectAtIndex:index];
-    NSLog(@"Being asked for %@", sample);
     
     if (fieldEnum == CPTScatterPlotFieldX){
-        return [sample valueForKey:@"Time"];
+        NSLog(@"Time coord: %@", [[[dicHand getDicHandler] objectForKey:@"Time"] objectAtIndex:index]);
+        return  [[[dicHand getDicHandler] objectForKey:@"Time"] objectAtIndex:index];
     }
     else{
-        return [sample valueForKey:@"Anger"];
+        NSLog(@"%@ coord is: %@",[plot identifier], [[[dicHand getDicHandler] objectForKey:[plot identifier]] objectAtIndex:index]);
+        return [[[dicHand getDicHandler] objectForKey:[plot identifier]] objectAtIndex:index];
     }
+}
+
+-(BOOL)plotSpace:(CPTPlotSpace *)space shouldHandlePointingDeviceDownEvent:(id)event atPoint:(CGPoint)point{
+    NSLog(@"Can touch down");
+    return YES;
 }
 
 @end

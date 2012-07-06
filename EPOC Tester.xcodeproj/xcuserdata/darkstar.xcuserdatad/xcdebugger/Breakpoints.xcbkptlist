@@ -56,41 +56,41 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "EPOC Tester/GraphDisplay.m"
-         timestampString = "363211910.009718"
+         timestampString = "363251683.62194"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "92"
-         endingLineNumber = "92"
+         startingLineNumber = "73"
+         endingLineNumber = "73"
          landmarkName = "-initGraph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "EPOC Tester/GraphDisplay.m"
-         timestampString = "363211910.009718"
+         timestampString = "363251683.62194"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "93"
-         endingLineNumber = "93"
+         startingLineNumber = "74"
+         endingLineNumber = "74"
          landmarkName = "-initGraph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "EPOC Tester/GraphDisplay.m"
-         timestampString = "363211910.009718"
+         timestampString = "363251683.62194"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "95"
-         endingLineNumber = "95"
+         startingLineNumber = "76"
+         endingLineNumber = "76"
          landmarkName = "-initGraph"
          landmarkType = "5">
       </FileBreakpoint>
@@ -121,15 +121,93 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "EPOC Tester/GraphDisplay.m"
-         timestampString = "363211910.009718"
+         timestampString = "363251683.62194"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "94"
-         endingLineNumber = "94"
+         startingLineNumber = "75"
+         endingLineNumber = "75"
+         landmarkName = "-initGraph"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "EPOC Tester/GraphDisplay.m"
+         timestampString = "363251683.62194"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "80"
+         endingLineNumber = "80"
+         landmarkName = "-initGraph"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "EPOC Tester/GraphDisplay.m"
+         timestampString = "363251683.62194"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "81"
+         endingLineNumber = "81"
+         landmarkName = "-initGraph"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "EPOC Tester/GraphDisplay.m"
+         timestampString = "363251683.62194"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "85"
+         endingLineNumber = "85"
+         landmarkName = "-initGraph"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "EPOC Tester/GraphDisplay.m"
+         timestampString = "363251683.62194"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "86"
+         endingLineNumber = "86"
+         landmarkName = "-initGraph"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "EPOC Tester/GraphDisplay.m"
+         timestampString = "363251683.62194"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "92"
+         endingLineNumber = "92"
+         landmarkName = "-initGraph"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "EPOC Tester/GraphDisplay.m"
+         timestampString = "363251683.62194"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "91"
+         endingLineNumber = "91"
          landmarkName = "-initGraph"
          landmarkType = "5">
       </FileBreakpoint>
@@ -138,12 +216,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "EPOC Tester/GraphDisplay.m"
-         timestampString = "363211910.009718"
+         timestampString = "363251683.62194"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "99"
-         endingLineNumber = "99"
-         landmarkName = "-initGraph"
+         startingLineNumber = "121"
+         endingLineNumber = "121"
+         landmarkName = "-numberForPlot:field:recordIndex:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -151,12 +229,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "EPOC Tester/GraphDisplay.m"
-         timestampString = "363211910.009718"
+         timestampString = "363251683.62194"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "100"
-         endingLineNumber = "100"
-         landmarkName = "-initGraph"
+         startingLineNumber = "122"
+         endingLineNumber = "122"
+         landmarkName = "-numberForPlot:field:recordIndex:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -164,12 +242,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "EPOC Tester/GraphDisplay.m"
-         timestampString = "363211910.009718"
+         timestampString = "363251683.62194"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "104"
-         endingLineNumber = "104"
-         landmarkName = "-initGraph"
+         startingLineNumber = "124"
+         endingLineNumber = "124"
+         landmarkName = "-numberForPlot:field:recordIndex:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -177,12 +255,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "EPOC Tester/GraphDisplay.m"
-         timestampString = "363211910.009718"
+         timestampString = "363251683.62194"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "105"
-         endingLineNumber = "105"
-         landmarkName = "-initGraph"
+         startingLineNumber = "126"
+         endingLineNumber = "126"
+         landmarkName = "-numberForPlot:field:recordIndex:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -190,37 +268,37 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "EPOC Tester/GraphDisplay.m"
-         timestampString = "363211910.009718"
+         timestampString = "363251683.62194"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "113"
-         endingLineNumber = "113"
-         landmarkName = "-initGraph"
+         startingLineNumber = "128"
+         endingLineNumber = "128"
+         landmarkName = "-numberForPlot:field:recordIndex:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "EPOC Tester/GraphDisplay.m"
-         timestampString = "363211910.009718"
+         timestampString = "363251683.62194"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "115"
          endingLineNumber = "115"
-         landmarkName = "-initGraph"
+         landmarkName = "-numberOfRecordsForPlot:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "EPOC Tester/GraphDisplay.m"
-         timestampString = "363211910.009718"
+         timestampString = "363251683.62194"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "111"
-         endingLineNumber = "111"
+         startingLineNumber = "90"
+         endingLineNumber = "90"
          landmarkName = "-initGraph"
          landmarkType = "5">
       </FileBreakpoint>
@@ -229,25 +307,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "EPOC Tester/GraphDisplay.m"
-         timestampString = "363211910.009718"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "110"
-         endingLineNumber = "110"
-         landmarkName = "-initGraph"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "EPOC Tester/GraphDisplay.m"
-         timestampString = "363211910.009718"
+         timestampString = "363251683.62194"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "109"
          endingLineNumber = "109"
-         landmarkName = "-initGraph"
+         landmarkName = "-addDataToGraph"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -255,12 +320,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "EPOC Tester/GraphDisplay.m"
-         timestampString = "363211332.497089"
+         timestampString = "363251683.62194"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "41"
-         endingLineNumber = "41"
-         landmarkName = "-generatePoints"
+         startingLineNumber = "117"
+         endingLineNumber = "117"
+         landmarkName = "-numberOfRecordsForPlot:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

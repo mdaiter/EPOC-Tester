@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CorePlot/CorePlot.h>
 #import "SystemMonitor.h"
+#import "DicHandler.h"
 
-@interface GraphDisplay : NSViewController <NSPopoverDelegate, CPTPlotDataSource>{
+@interface GraphDisplay : NSViewController <NSPopoverDelegate, CPTPlotDataSource, CPTResponder, CPTScatterPlotDataSource, CPTPlotSpaceDelegate>{
 @private
     NSPopover *graphView;
     CPTGraphHostingView* hostView;
@@ -20,8 +21,7 @@
     BOOL firstTime;
     CPTPlot* plotData;
     SystemMonitor* s;
-    NSMutableArray* dataPoints;
-    NSDate* date;
+    DicHandler *dicHand;
 }
 
 -(NSPopover*)getPopover;
