@@ -27,8 +27,16 @@
         
         dicHand = [[DicHandler alloc] init];
         
+        //Reload graph data every second
+        [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(graphReloadData) userInfo:nil repeats:YES];
+
     }
     return self;
+}
+
+-(void)graphReloadData{
+    [graph reloadData];
+    NSLog(@"Reloading data");
 }
 
 -(NSPopover*)getPopover{
@@ -78,8 +86,8 @@
         
         CPTXYAxisSet *axisSet = (CPTXYAxisSet*)graph.axisSet;
         
-        axisSet.xAxis.majorIntervalLength = CPTDecimalFromFloat(5);
-        axisSet.xAxis.minorTicksPerInterval = 1;
+        axisSet.xAxis.majorIntervalLength = CPTDecimalFromFloat(10);
+        axisSet.xAxis.minorTicksPerInterval = 5;
         axisSet.xAxis.title = @"Time";
         //axisSet.xAxis.titleOffset = 40.0f;
         
@@ -102,7 +110,7 @@
     
     data.dataLineStyle = lineStyle;
     
-    [[graph defaultPlotSpace] scaleToFitPlots:[NSArray arrayWithObject:data]];
+    //[[graph defaultPlotSpace] scaleToFitPlots:[NSArray arrayWithObject:data]];
     
     return data;
 }

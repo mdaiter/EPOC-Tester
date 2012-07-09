@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VideoCapture.h"
 
 @interface EyeRecognition : NSObject{
-    
+    VideoCapture *vidCap;
 }
 
 @end

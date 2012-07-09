@@ -2,6 +2,10 @@
 // Prefix header for all source files of the 'EPOC Tester' target in the 'EPOC Tester' project
 //
 
+#ifdef __cplusplus
+#import <opencv2/opencv.hpp>
+#endif
+
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
 #endif
