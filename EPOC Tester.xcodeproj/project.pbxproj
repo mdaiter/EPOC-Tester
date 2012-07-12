@@ -71,11 +71,13 @@
 		CD6BD5E7159EDBB60040CAB6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD6BD5C7159EDBB60040CAB6 /* Cocoa.framework */; };
 		CD6BD5EF159EDBB60040CAB6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD6BD5ED159EDBB60040CAB6 /* InfoPlist.strings */; };
 		CD6BD5F2159EDBB60040CAB6 /* EPOC_TesterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD6BD5F1159EDBB60040CAB6 /* EPOC_TesterTests.m */; };
-		CD93482415A4A5B300F90139 /* SpotifyHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CD93482315A4A5B300F90139 /* SpotifyHandler.m */; };
 		CD93483615A4A8DC00F90139 /* CocoaLibSpotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD93481C15A4A4E100F90139 /* CocoaLibSpotify.framework */; };
 		CD95D2A015A34D0C0092EC7C /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD1AAFBA15A24B9F0061D8FE /* CorePlot.framework */; };
 		CD95D2C315A37C640092EC7C /* SystemMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = CD95D2C215A37C630092EC7C /* SystemMonitor.m */; };
 		CDD2F9A515A697CE001D3DD6 /* DicHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD2F9A415A697CE001D3DD6 /* DicHandler.m */; };
+		CDD3B4ED15AE4DD9001ECE8F /* appLogItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD3B4EC15AE4DD9001ECE8F /* appLogItem.m */; };
+		CDF235DF15ACF00200E1BC94 /* SettingsDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = CDF235DE15ACF00200E1BC94 /* SettingsDisplay.m */; };
+		CDF235E115ACF3B000E1BC94 /* Settings.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDF235E015ACF3B000E1BC94 /* Settings.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -240,16 +242,19 @@
 		CD6BD5F0159EDBB60040CAB6 /* EPOC_TesterTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPOC_TesterTests.h; sourceTree = "<group>"; };
 		CD6BD5F1159EDBB60040CAB6 /* EPOC_TesterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPOC_TesterTests.m; sourceTree = "<group>"; };
 		CD93481215A4A4E100F90139 /* CocoaLibSpotify Mac Framework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CocoaLibSpotify Mac Framework.xcodeproj"; path = "../../../Downloads/spotify-cocoalibspotify-3be59f4/Mac Framework/CocoaLibSpotify Mac Framework.xcodeproj"; sourceTree = "<group>"; };
-		CD93482215A4A5B300F90139 /* SpotifyHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpotifyHandler.h; sourceTree = "<group>"; };
-		CD93482315A4A5B300F90139 /* SpotifyHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpotifyHandler.m; sourceTree = "<group>"; };
 		CD93483715A4A91E00F90139 /* libspotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = libspotify.framework; path = "../../Downloads/spotify-cocoalibspotify-3be59f4/Mac Framework/libspotify-12.1.45-Darwin-universal/libspotify.framework"; sourceTree = "<group>"; };
 		CD95D2A115A34D9E0092EC7C /* CorePlot.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CorePlot.xcodeproj; path = ../../../Downloads/CorePlot_1.0/Source/framework/CorePlot.xcodeproj; sourceTree = "<group>"; };
 		CD95D2C115A37C630092EC7C /* SystemMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemMonitor.h; sourceTree = "<group>"; };
 		CD95D2C215A37C630092EC7C /* SystemMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMonitor.m; sourceTree = "<group>"; };
 		CDD2F9A315A697CE001D3DD6 /* DicHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DicHandler.h; sourceTree = "<group>"; };
 		CDD2F9A415A697CE001D3DD6 /* DicHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DicHandler.m; sourceTree = "<group>"; };
+		CDD3B4EB15AE4DD9001ECE8F /* appLogItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = appLogItem.h; sourceTree = "<group>"; };
+		CDD3B4EC15AE4DD9001ECE8F /* appLogItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = appLogItem.m; sourceTree = "<group>"; };
 		CDED447215AB3A6400D1DEA6 /* libopencv_core.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.2.4.2.dylib; path = /usr/local/lib/libopencv_core.2.4.2.dylib; sourceTree = "<absolute>"; };
 		CDED447415AB3A7300D1DEA6 /* libopencv_highgui.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_highgui.2.4.2.dylib; path = /usr/local/lib/libopencv_highgui.2.4.2.dylib; sourceTree = "<absolute>"; };
+		CDF235DD15ACF00200E1BC94 /* SettingsDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsDisplay.h; sourceTree = "<group>"; };
+		CDF235DE15ACF00200E1BC94 /* SettingsDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsDisplay.m; sourceTree = "<group>"; };
+		CDF235E015ACF3B000E1BC94 /* Settings.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Settings.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -396,6 +401,7 @@
 		CD4CCBB815A635A000CDAC7C /* XIBS */ = {
 			isa = PBXGroup;
 			children = (
+				CDF235E015ACF3B000E1BC94 /* Settings.xib */,
 				CD6BD5DC159EDBB60040CAB6 /* MainMenu.xib */,
 				CD50D25715A2420B00E48536 /* PercentDisplay.xib */,
 			);
@@ -459,16 +465,18 @@
 				CD95D2A115A34D9E0092EC7C /* CorePlot.xcodeproj */,
 				CD6BD5D9159EDBB60040CAB6 /* AppDelegate.h */,
 				CD6BD5DA159EDBB60040CAB6 /* AppDelegate.m */,
+				CDF235DD15ACF00200E1BC94 /* SettingsDisplay.h */,
+				CDF235DE15ACF00200E1BC94 /* SettingsDisplay.m */,
 				CD50D25415A2397B00E48536 /* GraphDisplay.h */,
 				CD50D25515A2397B00E48536 /* GraphDisplay.m */,
 				CD95D2C115A37C630092EC7C /* SystemMonitor.h */,
 				CD95D2C215A37C630092EC7C /* SystemMonitor.m */,
+				CDD3B4EB15AE4DD9001ECE8F /* appLogItem.h */,
+				CDD3B4EC15AE4DD9001ECE8F /* appLogItem.m */,
 				CD37211515A7680B00B517B9 /* Classes */,
 				CDD2F9A315A697CE001D3DD6 /* DicHandler.h */,
 				CDD2F9A415A697CE001D3DD6 /* DicHandler.m */,
 				CD37205115A73A0A00B517B9 /* FacialRecognition */,
-				CD93482215A4A5B300F90139 /* SpotifyHandler.h */,
-				CD93482315A4A5B300F90139 /* SpotifyHandler.m */,
 				CD4CCB9E15A5EFD100CDAC7C /* Handler.h */,
 				CD4CCB9F15A5EFD100CDAC7C /* Handler.m */,
 				CD50D25015A2379F00E48536 /* PercentDisplay.h */,
@@ -674,6 +682,7 @@
 				CD6BD5D8159EDBB60040CAB6 /* Credits.rtf in Resources */,
 				CD6BD5DE159EDBB60040CAB6 /* MainMenu.xib in Resources */,
 				CD50D25815A2420B00E48536 /* PercentDisplay.xib in Resources */,
+				CDF235E115ACF3B000E1BC94 /* Settings.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,7 +722,6 @@
 				CD50D25215A2379F00E48536 /* PercentDisplay.m in Sources */,
 				CD50D25615A2397B00E48536 /* GraphDisplay.m in Sources */,
 				CD95D2C315A37C640092EC7C /* SystemMonitor.m in Sources */,
-				CD93482415A4A5B300F90139 /* SpotifyHandler.m in Sources */,
 				CD4CCBA015A5EFD100CDAC7C /* Handler.m in Sources */,
 				CDD2F9A515A697CE001D3DD6 /* DicHandler.m in Sources */,
 				CD37204A15A739C400B517B9 /* FacialRecognition.m in Sources */,
@@ -741,6 +749,8 @@
 				CD37217B15A7680B00B517B9 /* ASIS3ObjectRequest.m in Sources */,
 				CD37217C15A7680B00B517B9 /* ASIS3Request.m in Sources */,
 				CD37217D15A7680B00B517B9 /* ASIS3ServiceRequest.m in Sources */,
+				CDF235DF15ACF00200E1BC94 /* SettingsDisplay.m in Sources */,
+				CDD3B4ED15AE4DD9001ECE8F /* appLogItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

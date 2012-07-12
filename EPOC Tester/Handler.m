@@ -12,7 +12,7 @@
 
 -(id)init{
     if ([super init]){
-        
+        dicHandl = [[DicHandler alloc] init];
     }
     return self;
 }
@@ -28,12 +28,8 @@
     return AXUIElementCreateApplication(pid);
 }
 
--(NSDictionary*)assessMood:(NSData *)data{
-    return [[NSDictionary alloc] init];
-}
-
--(NSDictionary*)getMood{
-    return mood;
+-(DicHandler*)getHandl{
+    return dicHandl;
 }
 
 @end

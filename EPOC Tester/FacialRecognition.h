@@ -11,8 +11,8 @@
 #import "FaceComComm.h"
 
 @interface FacialRecognition : NSObject{
-    EyeRecognition* eyeRec;
-    FaceComComm *faceComComm;
+    //EyeRecognition* eyeRec;
+    //FaceComComm *faceComComm;
 }
 
 @end

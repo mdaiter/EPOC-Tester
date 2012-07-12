@@ -16,7 +16,7 @@
 
 -(id)init{
     if ([super init]){
-        eyeRec = [[EyeRecognition alloc] init];
+        //eyeRec = [[EyeRecognition alloc] init];
         //faceComComm = [[FaceComComm alloc] init];
     }
     return self;

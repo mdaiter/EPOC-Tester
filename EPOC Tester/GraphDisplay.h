@@ -10,18 +10,23 @@
 #import <CorePlot/CorePlot.h>
 #import "SystemMonitor.h"
 #import "DicHandler.h"
+#import "SettingsDisplay.h"
 
-@interface GraphDisplay : NSViewController <NSPopoverDelegate, CPTPlotDataSource, CPTResponder, CPTScatterPlotDataSource, CPTPlotSpaceDelegate>{
+@interface GraphDisplay : NSViewController <NSPopoverDelegate, CPTScatterPlotDataSource, CPTScatterPlotDelegate, CPTPlotDataSource, CPTPlotSpaceDelegate>{
 @private
     NSPopover *graphView;
     CPTGraphHostingView* hostView;
     CPTGraph* graph;
     CPTTheme* theme;
+    NSButton* settingsButton;
     CGRect graphRect;
     BOOL firstTime;
     CPTPlot* plotData;
     SystemMonitor* s;
     DicHandler *dicHand;
+    SettingsDisplay* settings;
+    
+    CPTPlotSpaceAnnotation *annotation;
 }
 
 -(NSPopover*)getPopover;

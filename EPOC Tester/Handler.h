@@ -7,18 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DicHandler.h"
 
 @interface Handler : NSObject{
 @protected
     pid_t currentAppPID;
     AXUIElementRef element;
-    NSDictionary* mood;
+    DicHandler *dicHandl;
 }
 
 -(AXUIElementRef)frontMostApp;
 
--(NSDictionary*)assessMood:(NSData*)data;
-
--(NSDictionary*)getMood;
+-(DicHandler*)getHandl;
 
 @end

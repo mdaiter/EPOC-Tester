@@ -8,13 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "Handler.h"
+#import "appLogItem.h"
 
 @interface SystemMonitor : Handler{
     NSRunningApplication *app;
+    NSDate* date;
+    int appRunTime;
+    int prevTimeElapsed;
+    
+    NSMutableArray* appLog;
 }
 
 -(void)getCurrApp:(NSTimer*)theTimer;
 -(id)init;
 -(AXUIElementRef)frontMostApp;
+-(NSRunningApplication*)app;
+-(NSMutableArray*)getAppLog;
 
 @end
