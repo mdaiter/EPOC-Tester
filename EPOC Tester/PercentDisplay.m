@@ -13,6 +13,7 @@
 -(id)init{
     if ([super initWithNibName:@"PercentDisplay" bundle:nil]){
         graph = [[GraphDisplay alloc] init];
+        [self display];
     }
     return self;
 }
@@ -24,7 +25,6 @@
     [statusItem setEnabled:TRUE];
     [statusItem setAction:@selector(update:)];
     [statusItem setTarget:self];
-    
     
     NSLog(@"I HAVE BEEN AWOKEN");
 }

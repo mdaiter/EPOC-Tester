@@ -23,24 +23,21 @@
         
         prevTimeElapsed = 0;
         
-        prevAppLog = [[NSMutableDictionary alloc] init];
-        
         appLog = [[NSMutableDictionary alloc] init];
         
         [self loadData];
         
+        sysResponder = [[SystemResponder alloc] init];
+        
         // Register ourselves as a Growl delegate
         [GrowlApplicationBridge setGrowlDelegate:self];
+        //Tell the user the graph has loaded
         [GrowlApplicationBridge notifyWithTitle:@"Graph loaded" description:@"Tracking data..." notificationName:@"Opening" iconData:nil priority:0 isSticky:NO clickContext:[NSDate date]];
        
 
-        [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(saveData) userInfo:nil repeats:YES];
+        //[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(saveData) userInfo:nil repeats:YES];
     }
     return self;
-}
-
--(NSMutableDictionary*)getPrevAppLog{
-    return prevAppLog;
 }
 
 //Load data in the beginning to get back data from previous session
@@ -72,14 +69,15 @@
     NSLog(@"App changed");
     
     if ([appLog count] != 0){
-    
+        /*
         //Get time variable
         int timeElapse = ([[self returnTimeStamp] intValue]- prevTimeElapsed);
         prevTimeElapsed = [[self returnTimeStamp] intValue];
     
         int currTime = [[appLog objectForKey:[app localizedName]] getTime];
         
-        [[appLog objectForKey:[app localizedName]] setTime:currTime + timeElapse];
+        //Add app that just ended to dictionary
+        [[appLog objectForKey:[app localizedName]] setTime:currTime + timeElapse];*/
     }
     //Update current app
     [self getCurrApp:nil];
@@ -89,9 +87,10 @@
     return updatingDics;
 }
 
--(void)getCurrApp:(NSTimer*) theTimer{
+-(void)getCurrApp:(NSTimer*) theTimer{    
     AXUIElementRef systemWideElement = [self frontMostApp];
     AXUIElementRef frontMostWindow;
+    AppLogItem* temp = [[AppLogItem alloc] initWithApp:app AndTime:0];
     CFStringRef windowTitle;
     if (!AXAPIEnabled()){
         [[NSWorkspace sharedWorkspace] openFile:@"/System/Library/PreferencePanes/UniversalAccessPref.prefPane"];
@@ -102,15 +101,29 @@
         AXUIElementCopyAttributeValue(systemWideElement, kAXFocusedWindowAttribute, (CFTypeRef*)&frontMostWindow);
         AXUIElementCopyAttributeValue(frontMostWindow, kAXTitleAttribute, (CFTypeRef*)&windowTitle);
                 
-        //if (windowTitle == NULL || CFStringGetLength(windowTitle) == 0){
+        if (windowTitle != NULL || CFStringGetLength(windowTitle) != 0){
             //Show strings
-            //CFShow(windowTitle);
-        //}
+            CFShow(windowTitle);
+        }
     }
-    AppLogItem* temp = [[AppLogItem alloc] initWithApp:app AndTime:0];
-    
-    //Add app to mutable dictionary
-    [appLog setValue:temp forKey:[temp getNameOfApp]];
+    //If we've never seen the app before, add the time as zero. Otherwise, check if the app has the title in the dictionary
+    if ([appLog objectForKey:[app localizedName]] == nil){
+        //Add app with title to mutable dictionary
+        [[temp getTitles] setObject:[NSMutableDictionary dictionary] forKey:(__bridge NSString*)windowTitle];
+        [appLog setValue:temp forKey:[temp getNameOfApp]];
+        NSLog(@"Never sen the app, but we're adding it!\n%@ is the name, %@ is the window!", [temp getNameOfApp], [[temp getTitles] objectForKey:(__bridge NSString*)windowTitle]);
+    }
+    else{
+        //If we've never seen the title before, add it to the dictionary
+        if ([[[appLog objectForKey:[app localizedName]] getTitles] objectForKey:(__bridge NSString*)windowTitle] == nil){
+            [[[appLog objectForKey:[app localizedName]] getTitles] setObject:[NSMutableDictionary dictionary] forKey:(__bridge NSString*)windowTitle];
+            NSLog(@"Seen the app, but we're adding it!\n%@ is the name, %@ is the window!", [app localizedName], [[[appLog objectForKey:[app localizedName]] getTitles] objectForKey:(__bridge NSString*)windowTitle]);
+        }
+        //If we've seen both the app and the title, don't do anything.
+    }
+    [[appLog objectForKey:[app localizedName]] setTime:[[appLog objectForKey:[app localizedName]] getTime]+1];
+    //Responder method
+    [sysResponder checkForNewDataWith:appLog];
 }
 
 -(NSNumber*)returnTimeStamp{

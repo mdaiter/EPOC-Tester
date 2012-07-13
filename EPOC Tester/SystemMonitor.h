@@ -9,17 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "Handler.h"
 #import "appLogItem.h"
+#import "SystemResponder.h"
 #import <Growl/Growl.h>
 
 @interface SystemMonitor : Handler <GrowlApplicationBridgeDelegate>{
+@private
     NSRunningApplication *app;
     NSDate* date;
     int appRunTime;
     int prevTimeElapsed;
     
     NSMutableDictionary* appLog;
-    NSMutableDictionary* prevAppLog;
     BOOL updatingDics;
+    SystemResponder* sysResponder;
 }
 
 -(void)saveData;
@@ -28,7 +30,6 @@
 -(AXUIElementRef)frontMostApp;
 -(NSRunningApplication*)app;
 -(NSMutableDictionary*)getAppLog;
--(NSMutableDictionary*)getPrevAppLog;
 -(BOOL)updatingDics;
 
 @end

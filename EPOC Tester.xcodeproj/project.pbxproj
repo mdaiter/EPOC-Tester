@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD03888F15B072EA0035BEFD /* SystemResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = CD03888E15B072EA0035BEFD /* SystemResponder.m */; };
 		CD1AAFBE15A24DFC0061D8FE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD1AAFBD15A24DFC0061D8FE /* QuartzCore.framework */; };
 		CD34A05915AFF8E4002B1525 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = CD34A05815AFF8E4002B1525 /* Growl Registration Ticket.growlRegDict */; };
 		CD34A06215B0003E002B1525 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD34A06015AFFFF3002B1525 /* Growl.framework */; };
@@ -150,6 +151,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD03888D15B072EA0035BEFD /* SystemResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemResponder.h; sourceTree = "<group>"; };
+		CD03888E15B072EA0035BEFD /* SystemResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemResponder.m; sourceTree = "<group>"; };
 		CD1AAFBA15A24B9F0061D8FE /* CorePlot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CorePlot.framework; path = ../../Downloads/CorePlot_1.0/Binaries/MacOS/CorePlot.framework; sourceTree = "<group>"; };
 		CD1AAFBD15A24DFC0061D8FE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CD34A05815AFF8E4002B1525 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
@@ -491,6 +494,8 @@
 				CDF235DE15ACF00200E1BC94 /* SettingsDisplay.m */,
 				CD50D25415A2397B00E48536 /* GraphDisplay.h */,
 				CD50D25515A2397B00E48536 /* GraphDisplay.m */,
+				CD03888D15B072EA0035BEFD /* SystemResponder.h */,
+				CD03888E15B072EA0035BEFD /* SystemResponder.m */,
 				CD95D2C115A37C630092EC7C /* SystemMonitor.h */,
 				CD95D2C215A37C630092EC7C /* SystemMonitor.m */,
 				CDD3B4EB15AE4DD9001ECE8F /* appLogItem.h */,
@@ -778,6 +783,7 @@
 				CD37217D15A7680B00B517B9 /* ASIS3ServiceRequest.m in Sources */,
 				CDF235DF15ACF00200E1BC94 /* SettingsDisplay.m in Sources */,
 				CDD3B4ED15AE4DD9001ECE8F /* appLogItem.m in Sources */,
+				CD03888F15B072EA0035BEFD /* SystemResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,8 @@
     //App name
     NSString* appName;
     //Amount of titles that have been in the array
-    NSMutableArray* titleArray;
+    NSMutableDictionary* titles;
+    NSString* currWindowName;
     NSMutableDictionary* ratings;
 }
 
@@ -23,16 +24,24 @@
 
 -(int)getTime;
 
+-(NSString*)currWindowName;
+
+-(void)setCurrWindowName:(NSString*)name;
+
 -(void)setTime:(int)time;
 
 -(NSString*)getNameOfApp;
 
 -(NSMutableDictionary*)ratings;
 
+-(NSMutableDictionary*)getTitles;
+
 -(void)setNameOfApp:(NSString*)nameOfApp;
 
 -(void)setDictionaryOfApp:(NSMutableDictionary*)dic;
 
 -(void)updateWithDic:(NSMutableDictionary*)dic WithKey:(NSString*)key;
+
+-(void)addTitle:(CFStringRef)title;
 
 @end
