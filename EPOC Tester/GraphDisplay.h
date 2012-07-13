@@ -22,9 +22,11 @@
     CGRect graphRect;
     BOOL firstTime;
     CPTPlot* plotData;
-    SystemMonitor* s;
+    SystemMonitor* sys;
     DicHandler *dicHand;
     SettingsDisplay* settings;
+    
+    NSThread *updateDicThread;
     
     CPTPlotSpaceAnnotation *annotation;
 }

@@ -40,18 +40,7 @@
     NSString* plotName = [[NSString alloc] initWithString:[plot identifier]];
     //Get level measurment of emotion
     NSString* level = [[NSString alloc] initWithFormat:@"%@", y];
-    
-    NSString* appName;
-    int time = 0;
-    for (int i = 0; i < [[s getAppLog] count]; i++){
-        time += [[[s getAppLog] objectAtIndex:i] getTime];
-        if (time >= [x intValue]){
-            appName = [[[s getAppLog] objectAtIndex:i] getNameOfApp];
-            break;
-        }
-    }
-    
-    NSString* valueAnnotContent = [[NSString alloc] initWithFormat:@"%@\n%@\n%@", plotName, level, appName];
+    NSString* valueAnnotContent = [[NSString alloc] initWithFormat:@"%@\n%@", plotName, level];
     
     //Make annotation and add to graph
     CPTTextLayer *textLayer = [[CPTTextLayer alloc] initWithText:valueAnnotContent style:annotationStyle];
@@ -87,7 +76,7 @@
         firstTime = FALSE;
         
         //Instantiate other objects necessary
-        s = [[SystemMonitor alloc] init];
+        sys = [[SystemMonitor alloc] init];
         
         dicHand = [[DicHandler alloc] init];
         
@@ -230,15 +219,12 @@
         //Make sure we have the right coordinate
         NSLog(@"%@ coord is: %@",[plot identifier], [[[dicHand getDicHandler] objectForKey:[plot identifier]] objectAtIndex:index]);
         
-        //Computate average levels of irritation after adding plot
-        for (AppLogItem* item in [s getAppLog]) {
-            NSLog(@"Current app id:%@\nCurrent localized name:%@", [item getNameOfApp], [[s app] localizedName]);
-            if ([[[s app] localizedName] isEqualToString:[item getNameOfApp]]){
-                NSLog(@"Hit this point!! Updating the dic");
-                //Update the dictionary for the right app with the given key and value
-                [item updateDic:[dicHand getDicHandler] WithKey:[NSString stringWithFormat:@"%@", [plot identifier]]];
-            }
-        }
+        //Computate average levels of emotions after adding plot
+        //Put it on a seperate thread (expensive computation)
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [[[sys getAppLog] objectForKey:[[sys app] localizedName]] updateWithDic:[dicHand getDicHandler] WithKey:[NSString stringWithFormat:@"%@", [plot identifier]]];
+            //[s saveData];
+        });
         
         //Return the coordinate
         return [[[dicHand getDicHandler] objectForKey:[plot identifier]] objectAtIndex:index];

@@ -14,22 +14,52 @@
     if ([super init]) {
         //Detect if any applications switched
         [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(appSwitched) name:NSWorkspaceDidActivateApplicationNotification object:nil];
-
+        
         [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(getCurrApp:) userInfo:nil repeats:YES];
         
         app = [[NSRunningApplication alloc] init];
-        
         //Date necessary for calculating time
         date = [NSDate date];
         
         prevTimeElapsed = 0;
         
-        appLog = [[NSMutableArray alloc] init];
+        prevAppLog = [[NSMutableDictionary alloc] init];
+        
+        appLog = [[NSMutableDictionary alloc] init];
+        
+        [self loadData];
+        
+        // Register ourselves as a Growl delegate
+        [GrowlApplicationBridge setGrowlDelegate:self];
+        [GrowlApplicationBridge notifyWithTitle:@"Graph loaded" description:@"Tracking data..." notificationName:@"Opening" iconData:nil priority:0 isSticky:NO clickContext:[NSDate date]];
+       
+
+        [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(saveData) userInfo:nil repeats:YES];
     }
     return self;
 }
 
--(NSMutableArray*)getAppLog{
+-(NSMutableDictionary*)getPrevAppLog{
+    return prevAppLog;
+}
+
+//Load data in the beginning to get back data from previous session
+-(void)loadData{
+    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"appLog"]){
+        //
+        appLog = [NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] valueForKey:@"appLog"]];
+        
+        NSLog(@"%ld apps loaded in total", [appLog count]);
+    }
+}
+
+//Save data to place
+-(void)saveData{    
+    //Add latest app to app log
+    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:appLog] forKey:@"appLog"];
+}
+
+-(NSMutableDictionary*)getAppLog{
     return appLog;
 }
 
@@ -41,34 +71,22 @@
 -(void)appSwitched{
     NSLog(@"App changed");
     
-    //Get time variable
-    int timeElapse = ([[self returnTimeStamp] intValue]- prevTimeElapsed);
-    prevTimeElapsed = [[self returnTimeStamp] intValue];
+    if ([appLog count] != 0){
     
-    //Make new referenced app
-    BOOL isRepeat = FALSE;
+        //Get time variable
+        int timeElapse = ([[self returnTimeStamp] intValue]- prevTimeElapsed);
+        prevTimeElapsed = [[self returnTimeStamp] intValue];
     
-    //If previously stored in our array, just add time elapsed onto app
-    for (AppLogItem* item in appLog){
-        if ([[item getNameOfApp] isEqualToString:[app localizedName]]){
-            isRepeat = TRUE;
-            [item setTime:[item getTime]+timeElapse];
-            NSLog(@"%d seconds added to %@", timeElapse, [item getNameOfApp]);
-            NSLog(@"%d seconds in %@", [item getTime], [item getNameOfApp]);
-        }
+        int currTime = [[appLog objectForKey:[app localizedName]] getTime];
+        
+        [[appLog objectForKey:[app localizedName]] setTime:currTime + timeElapse];
     }
-    
-    //If app is never seen before, ad it to the system
-    if (isRepeat == FALSE){
-        //Create new log item
-        AppLogItem* temp = [[AppLogItem alloc] initWithApp:app AndTime:timeElapse];
-        //Add app to mutable array
-        [appLog addObject:temp];
-        NSLog(@"Added %@ to array.\n%@ was open for %d seconds", [temp getNameOfApp], [temp getNameOfApp], [temp getTime]);
-    }
-    
     //Update current app
     [self getCurrApp:nil];
+}
+
+-(BOOL)updatingDics{
+    return updatingDics;
 }
 
 -(void)getCurrApp:(NSTimer*) theTimer{
@@ -89,6 +107,10 @@
             //CFShow(windowTitle);
         //}
     }
+    AppLogItem* temp = [[AppLogItem alloc] initWithApp:app AndTime:0];
+    
+    //Add app to mutable dictionary
+    [appLog setValue:temp forKey:[temp getNameOfApp]];
 }
 
 -(NSNumber*)returnTimeStamp{

@@ -14,15 +14,40 @@ CvCapture *capture;
 
 -(id)init{
     if ([super init]){
-        
+        //vidCap = [[VideoCapture alloc] init];
         [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(capImage) userInfo:nil repeats:YES];
     }
     return self;
 }
 
+-(IplImage*)convertNSImage:(NSBitmapImageRep*)rep{
+    int depth = (int)[rep bitsPerSample];
+    int channels = (int)[rep samplesPerPixel];
+    int height = [rep size].height;
+    int width = [rep size].width;
+    
+    IplImage* iplpic = cvCreateImage(cvSize(width, height), 8, channels);
+    cvSetImageData(iplpic, [rep bitmapData], (int)[rep bytesPerRow]);
+    
+    //Give data to image
+    for (int i = 0; 0 < iplpic->imageSize; i+=3){
+        uchar tempR, tempG, tempB;
+        tempR = iplpic->imageData[i];
+        tempG = iplpic->imageData[i+1];
+        tempB = iplpic->imageData[i+2];
+        
+        iplpic->imageData[i+2] = tempR;
+        iplpic->imageData[i+1] = tempG;
+        iplpic->imageData[i] = tempB;
+    }
+    
+    return iplpic;
+}
+
 -(void)capImage{
     //Start video stream from web cam
     capture = cvCaptureFromCAM(0);
+    
     
     cvNamedWindow("video");
     cvNamedWindow("thresh");
@@ -32,7 +57,10 @@ CvCapture *capture;
     
     //Stream images from webcam
     img = cvQueryFrame(capture);
+    //img = cvLoadImage("/Users/darkstar/Documents/EPOC Tester/EPOC Tester/eye.jpg");
+    //img = [self convertNSImage:[vidCap takePhoto]];
     
+    cvShowImage("video", img);
     IplImage* imgscribble = cvCreateImage(cvGetSize(img), 8, 3);
     
     //Get thresholded image
@@ -52,12 +80,11 @@ CvCapture *capture;
 -(IplImage*)extractContours:(IplImage*)image{
     CvMemStorage* memStorage = cvCreateMemStorage(0);
     CvSeq* contours = 0;
-    cvFindContours(image, memStorage, &contours, sizeof(CvContour), CV_RETR_LIST);
-    cvZero(image);
+    cvFindContours(image, memStorage, &contours, sizeof(CvContour), CV_RETR_EXTERNAL);
     
     //If there are contours, extract the largest one
     if (contours){
-        int max = 0;
+        /*int max = 0;
         for (int i = 0; i < contours->total; i++){
             if (i > 0){
                 NSLog(@"%f", cvContourArea(contours, CV_WHOLE_SEQ));
@@ -67,9 +94,8 @@ CvCapture *capture;
             }
         }
         
-        NSLog(@"Largest one is: %d", max);
+        NSLog(@"Largest one is: %d", max);*/
         cvDrawContours(image, contours, cvScalarAll(255), cvScalarAll(100), 100);
-        
     }
     
     cvReleaseMemStorage(&memStorage);
@@ -84,16 +110,19 @@ CvCapture *capture;
     //Makes easier for computer to analyze
     cvEqualizeHist(eyeIm, eyeIm);
     cvSmooth(eyeIm, eyeIm, CV_GAUSSIAN, 5, 3);
-    cvAdaptiveThreshold(eyeIm, eyeIm, 255, CV_ADAPTIVE_THRESH_GAUSSIAN_C, CV_THRESH_BINARY_INV, 3, 5);
+    //cvAdaptiveThreshold(eyeIm, eyeIm, 255, CV_ADAPTIVE_THRESH_GAUSSIAN_C, CV_THRESH_BINARY_INV, 3, 5);
     IplImage* edgePass = cvCreateImage(cvGetSize(eyeIm), 8, 1);
     
     //Use Sobel matrix and canny algorithm to extract lines
     cvSobel(eyeIm, edgePass, 0, 1, CV_SCHARR);
     IplImage* edge = cvCreateImage(cvGetSize(edgePass), 8, 1);
     cvConvertScale(edgePass, edge);
-    cvCanny(eyeIm, edge, 0, 255);
+    //cvCanny(eyeIm, edge, 0, 255);
     cvDilate(edge, edge, NULL, 1);
     cvErode(edge, edge, NULL, 1);
+    
+    cvNamedWindow("Comparison");
+    cvShowImage("Comparison", edge);
     
     //Extract contours
     return [self extractContours:edge];

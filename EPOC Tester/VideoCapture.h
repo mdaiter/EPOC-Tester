@@ -24,6 +24,8 @@
 
 -(id)init;
 
+-(NSBitmapImageRep*)takePhoto;
+
 -(NSData*)takeImage;
 
 @end

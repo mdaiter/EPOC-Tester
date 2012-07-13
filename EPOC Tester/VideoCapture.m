@@ -82,6 +82,28 @@
     }
 }
 
+-(NSBitmapImageRep*)takePhoto{
+    CIImage* image = [CIImage imageWithCVImageBuffer:currImage];
+    if ([self detectFaces:image]){
+        //CONVERSIONS!!!!
+        NSCIImageRep *imageRep = [NSCIImageRep imageRepWithCIImage:image];
+        
+        NSImage* tempImage = [[NSImage alloc] initWithSize:[imageRep size]];
+        [tempImage addRepresentation:imageRep];
+        NSData* bitmapData = [tempImage TIFFRepresentation];
+        NSBitmapImageRep *bitmapRep = [NSBitmapImageRep imageRepWithData:bitmapData];
+        
+        CVBufferRelease(currImage);
+        
+        NSLog(@"Returning image");
+        
+        return bitmapRep;
+    }
+    else{
+        return nil;
+    }
+}
+
 //Taken from tutorial (mostly). Takes currImage and converts to NSImage (easier to work with).
 -(NSData*)takeImage{
     CIImage* image = [CIImage imageWithCVImageBuffer:currImage];
