@@ -15,6 +15,7 @@
     NSMutableArray* angerArray;
     NSMutableArray* happyArray;
     NSMutableArray* timeArray;
+    NSMutableArray* stressArray;
 
     FacialRecognition *faceRec;
     

@@ -16,12 +16,13 @@
         angerArray = [[NSMutableArray alloc] init];
         happyArray = [[NSMutableArray alloc] init];
         timeArray = [[NSMutableArray alloc] init];
+        stressArray = [[NSMutableArray alloc] init];
         
         //Init keys
-        emotionsKeys = [[NSMutableArray alloc] initWithObjects:@"Anger", @"Happiness", @"Time", nil];
+        emotionsKeys = [[NSMutableArray alloc] initWithObjects:@"angry", @"happy", @"stressed", @"Time", nil];
         
         //Init dictionary that will hold everything
-        dictionaries = [[NSMutableDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:angerArray, happyArray, timeArray, nil] forKeys:[emotionsKeys copy]];
+        dictionaries = [[NSMutableDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:angerArray, happyArray, stressArray, timeArray, nil] forKeys:[emotionsKeys copy]];
         
         //Date necessary for calculating time
         date = [NSDate date];
