@@ -28,8 +28,12 @@
 }
 
 -(void)encodeWithCoder:(NSCoder*)coder{
+    for (NSString* str in ratings){
+        [ratings setObject:[NSNumber numberWithInt:[ratings objectForKey:str]] forKey:str];
+    }
+    
     [coder encodeObject: appName forKey:@"appName"];
-    [coder encodeObject: ratings forKey:@"ratings"];
+    [coder encodeObject:ratings forKey:@"ratings"];
     [coder encodeObject:titles forKey:@"titles"];
     [coder encodeObject:[NSNumber numberWithInt:tim] forKey:@"time"];
 }
@@ -98,12 +102,13 @@
     //Will always be a mutable array
     NSMutableArray* arr = (NSMutableArray*)[dic objectForKey:key];
     //Need to take out value in place
+    NSLog(@"%@ is the value for the key %@", [ratings valueForKey:key], key);
     int y = [[ratings valueForKey:key] intValue] * (tim-1);
     int x = 0;
     
     x = (y + [[arr objectAtIndex:[arr count]-1] intValue]);
     
-    NSLog(@"%d equals x", x);
+    NSLog(@"%d equals x\n%d equals y", x, y);
     NSLog(@"%d equals time", tim);
     
     //Get average

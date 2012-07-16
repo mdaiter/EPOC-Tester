@@ -7,15 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "appLogItem.h"
+#import <Growl/Growl.h>
 
-@interface SystemResponder : NSObject{
+@interface SystemResponder : NSObject <GrowlApplicationBridgeDelegate>{
 @private
     NSMutableDictionary* changeLog;
     BOOL newData;
+    NSString* currMood;
+    NSMutableDictionary* ratingsCurrApp;
+    unsigned int time;
 }
 
 -(void)checkForNewDataWith:(NSMutableDictionary*)dic AndApp:(NSRunningApplication*)app;
-
--(void)respondToData;
 
 @end

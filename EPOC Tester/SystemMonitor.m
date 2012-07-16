@@ -16,7 +16,7 @@
         [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(appSwitched) name:NSWorkspaceDidActivateApplicationNotification object:nil];
         
         [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(getCurrApp:) userInfo:nil repeats:YES];
-        
+        [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(saveData) userInfo:nil repeats:YES];
         app = [[NSRunningApplication alloc] init];
         //Date necessary for calculating time
         date = [NSDate date];
@@ -42,7 +42,7 @@
 
 //Load data in the beginning to get back data from previous session
 -(void)loadData{
-    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"appLog"]){
+    if ([[NSUserDefaults standardUserDefaults] arrayForKey:@"appLog"]){
         //
         appLog = [NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] valueForKey:@"appLog"]];
         
@@ -54,6 +54,7 @@
 -(void)saveData{    
     //Add latest app to app log
     [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:appLog] forKey:@"appLog"];
+    NSLog(@"Saved data");
 }
 
 -(NSMutableDictionary*)getAppLog{
@@ -68,17 +69,6 @@
 -(void)appSwitched{
     NSLog(@"App changed");
     
-    if ([appLog count] != 0){
-        /*
-        //Get time variable
-        int timeElapse = ([[self returnTimeStamp] intValue]- prevTimeElapsed);
-        prevTimeElapsed = [[self returnTimeStamp] intValue];
-    
-        int currTime = [[appLog objectForKey:[app localizedName]] getTime];
-        
-        //Add app that just ended to dictionary
-        [[appLog objectForKey:[app localizedName]] setTime:currTime + timeElapse];*/
-    }
     //Update current app
     [self getCurrApp:nil];
 }
@@ -101,10 +91,10 @@
         AXUIElementCopyAttributeValue(systemWideElement, kAXFocusedWindowAttribute, (CFTypeRef*)&frontMostWindow);
         AXUIElementCopyAttributeValue(frontMostWindow, kAXTitleAttribute, (CFTypeRef*)&windowTitle);
                 
-        if (windowTitle != NULL || CFStringGetLength(windowTitle) != 0){
+        /*if (windowTitle != NULL || CFStringGetLength(windowTitle) != 0){
             //Show strings
             CFShow(windowTitle);
-        }
+        }*/
     }
     //If we've never seen the app before, add the time as zero. Otherwise, check if the app has the title in the dictionary
     if ([appLog objectForKey:[app localizedName]] == nil){
@@ -123,7 +113,7 @@
     }
     [[appLog objectForKey:[app localizedName]] setTime:[[appLog objectForKey:[app localizedName]] getTime]+1];
     //Responder method
-    [sysResponder checkForNewDataWith:appLog];
+    [sysResponder checkForNewDataWith:appLog AndApp:app];
 }
 
 -(NSNumber*)returnTimeStamp{

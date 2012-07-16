@@ -224,8 +224,8 @@
         //Put it on a seperate thread (expensive computation)
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [[[sys getAppLog] objectForKey:[[sys app] localizedName]] updateWithDic:[dicHand getDicHandler] WithKey:[NSString stringWithFormat:@"%@", [plot identifier]]];
-            [sys saveData];
         });
+        
         
         //Return the coordinate
         return [[[dicHand getDicHandler] objectForKey:[plot identifier]] objectAtIndex:index];
