@@ -14,10 +14,16 @@
     if ([super init]) {
         //Detect if any applications switched
         [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(appSwitched) name:NSWorkspaceDidActivateApplicationNotification object:nil];
+        [[[NSWorkspace sharedWorkspace] notificationCenter] addObserver:self selector:@selector(getNewlyOpenedApp) name:NSWorkspaceDidLaunchApplicationNotification object:nil];
         
         [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(getCurrApp:) userInfo:nil repeats:YES];
-        [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(saveData) userInfo:nil repeats:YES];
+        
+        @synchronized(self){
+            [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(saveData) userInfo:nil repeats:YES];
+        }
+        
         app = [[NSRunningApplication alloc] init];
+        
         //Date necessary for calculating time
         date = [NSDate date];
         
@@ -77,11 +83,13 @@
     return updatingDics;
 }
 
--(void)getCurrApp:(NSTimer*) theTimer{    
+-(void)updateApps{
     AXUIElementRef systemWideElement = [self frontMostApp];
     AXUIElementRef frontMostWindow;
     AppLogItem* temp = [[AppLogItem alloc] initWithApp:app AndTime:0];
     CFStringRef windowTitle;
+    CFStringRef documentURL;
+    //Need Accessibility enabled
     if (!AXAPIEnabled()){
         [[NSWorkspace sharedWorkspace] openFile:@"/System/Library/PreferencePanes/UniversalAccessPref.prefPane"];
     }
@@ -90,18 +98,18 @@
     if (![app.localizedName isEqualToString:@"EPOC Tester"]){
         AXUIElementCopyAttributeValue(systemWideElement, kAXFocusedWindowAttribute, (CFTypeRef*)&frontMostWindow);
         AXUIElementCopyAttributeValue(frontMostWindow, kAXTitleAttribute, (CFTypeRef*)&windowTitle);
-                
+        AXUIElementCopyAttributeValue(frontMostWindow, kAXDocumentAttribute, (CFTypeRef*)&documentURL);
         /*if (windowTitle != NULL || CFStringGetLength(windowTitle) != 0){
-            //Show strings
-            CFShow(windowTitle);
-        }*/
+         //Show strings
+         CFShow(windowTitle);
+         }*/
     }
     //If we've never seen the app before, add the time as zero. Otherwise, check if the app has the title in the dictionary
     if ([appLog objectForKey:[app localizedName]] == nil){
         //Add app with title to mutable dictionary
         [[temp getTitles] setObject:[NSMutableDictionary dictionary] forKey:(__bridge NSString*)windowTitle];
         [appLog setValue:temp forKey:[temp getNameOfApp]];
-        NSLog(@"Never sen the app, but we're adding it!\n%@ is the name, %@ is the window!", [temp getNameOfApp], [[temp getTitles] objectForKey:(__bridge NSString*)windowTitle]);
+        NSLog(@"Never seen the app, but we're adding it!\n%@ is the name, %@ is the window!", [temp getNameOfApp], [[temp getTitles] objectForKey:(__bridge NSString*)windowTitle]);
     }
     else{
         //If we've never seen the title before, add it to the dictionary
@@ -112,7 +120,22 @@
         //If we've seen both the app and the title, don't do anything.
     }
     [[appLog objectForKey:[app localizedName]] setTime:[[appLog objectForKey:[app localizedName]] getTime]+1];
-    //Responder method
+    
+    //[sysResponder setURLFile:documentURL];
+    
+    CFRelease(windowTitle);
+    CFRelease(frontMostWindow);
+}
+//Get current app
+-(void)getCurrApp:(NSTimer*) theTimer{
+    [self updateApps];
+    [sysResponder checkForNewDataWith:appLog AndApp:app];
+}
+//Mark this as a newly opened app
+-(void)getNewlyOpenedApp{
+    NSLog(@"Getting the newly opened app.");
+    [self updateApps];
+    [sysResponder appChanged:true];
     [sysResponder checkForNewDataWith:appLog AndApp:app];
 }
 

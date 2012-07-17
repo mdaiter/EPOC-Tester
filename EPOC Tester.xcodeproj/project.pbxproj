@@ -44,6 +44,9 @@
 		CD37217D15A7680B00B517B9 /* ASIS3ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CD37214915A7680B00B517B9 /* ASIS3ServiceRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CD37218E15A7689D00B517B9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD37218D15A7689D00B517B9 /* libz.dylib */; };
 		CD37219015A769DF00B517B9 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD37218F15A769DF00B517B9 /* libxml2.dylib */; };
+		CD48182815B47E8F00E0CEAE /* AppleScriptKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD48182615B47E8F00E0CEAE /* AppleScriptKit.framework */; };
+		CD48182915B47E8F00E0CEAE /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD48182715B47E8F00E0CEAE /* AppleScriptObjC.framework */; };
+		CD48182B15B480F200E0CEAE /* AppLauncher.applescript in Sources */ = {isa = PBXBuildFile; fileRef = CD48182A15B480F200E0CEAE /* AppLauncher.applescript */; };
 		CD4CCBA015A5EFD100CDAC7C /* Handler.m in Sources */ = {isa = PBXBuildFile; fileRef = CD4CCB9F15A5EFD100CDAC7C /* Handler.m */; };
 		CD50D25215A2379F00E48536 /* PercentDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = CD50D25115A2379F00E48536 /* PercentDisplay.m */; };
 		CD50D25615A2397B00E48536 /* GraphDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = CD50D25515A2397B00E48536 /* GraphDisplay.m */; };
@@ -219,6 +222,9 @@
 		CD37214915A7680B00B517B9 /* ASIS3ServiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIS3ServiceRequest.m; sourceTree = "<group>"; };
 		CD37218D15A7689D00B517B9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		CD37218F15A769DF00B517B9 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		CD48182615B47E8F00E0CEAE /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = System/Library/Frameworks/AppleScriptKit.framework; sourceTree = SDKROOT; };
+		CD48182715B47E8F00E0CEAE /* AppleScriptObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptObjC.framework; path = System/Library/Frameworks/AppleScriptObjC.framework; sourceTree = SDKROOT; };
+		CD48182A15B480F200E0CEAE /* AppLauncher.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = AppLauncher.applescript; sourceTree = "<group>"; };
 		CD4CCB9E15A5EFD100CDAC7C /* Handler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Handler.h; sourceTree = "<group>"; };
 		CD4CCB9F15A5EFD100CDAC7C /* Handler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Handler.m; sourceTree = "<group>"; };
 		CD50D25015A2379F00E48536 /* PercentDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PercentDisplay.h; sourceTree = "<group>"; };
@@ -285,6 +291,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD48182815B47E8F00E0CEAE /* AppleScriptKit.framework in Frameworks */,
+				CD48182915B47E8F00E0CEAE /* AppleScriptObjC.framework in Frameworks */,
 				CD5305B815AB45ED00D14F2A /* libopencv_legacy.2.4.2.dylib in Frameworks */,
 				CD5305B915AB45ED00D14F2A /* libopencv_stitching.2.4.2.dylib in Frameworks */,
 				CD5305BA15AB45ED00D14F2A /* libopencv_videostab.2.4.2.dylib in Frameworks */,
@@ -457,6 +465,8 @@
 		CD6BD5C6159EDBB60040CAB6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD48182615B47E8F00E0CEAE /* AppleScriptKit.framework */,
+				CD48182715B47E8F00E0CEAE /* AppleScriptObjC.framework */,
 				CD37218F15A769DF00B517B9 /* libxml2.dylib */,
 				CD37218D15A7689D00B517B9 /* libz.dylib */,
 				CD3720F415A7659700B517B9 /* CFNetwork.framework */,
@@ -517,6 +527,7 @@
 		CD6BD5CE159EDBB60040CAB6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CD48182A15B480F200E0CEAE /* AppLauncher.applescript */,
 				CD95ACFE15AF4AD800E01BA0 /* eye.jpg */,
 				CD6BD5CF159EDBB60040CAB6 /* EPOC Tester-Info.plist */,
 				CD6BD5D0159EDBB60040CAB6 /* InfoPlist.strings */,
@@ -784,6 +795,7 @@
 				CDF235DF15ACF00200E1BC94 /* SettingsDisplay.m in Sources */,
 				CDD3B4ED15AE4DD9001ECE8F /* appLogItem.m in Sources */,
 				CD03888F15B072EA0035BEFD /* SystemResponder.m in Sources */,
+				CD48182B15B480F200E0CEAE /* AppLauncher.applescript in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

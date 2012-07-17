@@ -17,7 +17,13 @@
     NSString* currMood;
     NSMutableDictionary* ratingsCurrApp;
     unsigned int time;
+    BOOL appChanged;
+    CFStringRef url;
 }
+
+-(void)setURLFile:(CFStringRef)urlFile;
+
+-(void)appChanged:(BOOL)bo;
 
 -(void)checkForNewDataWith:(NSMutableDictionary*)dic AndApp:(NSRunningApplication*)app;
 

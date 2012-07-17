@@ -156,7 +156,7 @@
         //Create plot space
         CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace*) graph.defaultPlotSpace;
         plotSpace.allowsUserInteraction = YES;
-        plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0) length:CPTDecimalFromFloat(100)];
+        plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0) length:CPTDecimalFromFloat(25)];
         plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0) length:CPTDecimalFromFloat(100)];
         
         CPTXYAxisSet *axisSet = (CPTXYAxisSet*)graph.axisSet;
@@ -208,13 +208,22 @@
 //Amount of points to be plotted in graph
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot{
     NSLog(@"Count of records to be graphed: %lu \n for this plot: %@", [[[dicHand getDicHandler] objectForKey:[plot identifier]] count], [plot identifier]);
-    return [[[dicHand getDicHandler] objectForKey:[plot identifier]] count];
+    //Get amount of records. If over 50, only plot 50.
+    if ([[[dicHand getDicHandler] objectForKey:[plot identifier]] count] > 25){
+        return 25;
+    }
+    else{
+        return [[[dicHand getDicHandler] objectForKey:[plot identifier]] count];
+    }
 }
 
 -(NSNumber*)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index{
     if (fieldEnum == CPTScatterPlotFieldX){
         NSLog(@"Time coord: %@", [[[dicHand getDicHandler] objectForKey:@"Time"] objectAtIndex:index]);
-        return  [[[dicHand getDicHandler] objectForKey:@"Time"] objectAtIndex:index];
+        //int minX = (int)[[(CPTXYPlotSpace*)plot xRange] minLimitDouble];
+        //NSLog(@"%f is the minimum value", [[(CPTXYPlotSpace*)plot xRange] minLimitDouble]);
+        return [[[dicHand getDicHandler] objectForKey:@"Time"] objectAtIndex:index];
+
     }
     else{
         //Make sure we have the right coordinate
@@ -225,6 +234,7 @@
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [[[sys getAppLog] objectForKey:[[sys app] localizedName]] updateWithDic:[dicHand getDicHandler] WithKey:[NSString stringWithFormat:@"%@", [plot identifier]]];
         });
+        
         
         
         //Return the coordinate

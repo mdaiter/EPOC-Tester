@@ -15,7 +15,7 @@ CvCapture *capture;
 -(id)init{
     if ([super init]){
         //vidCap = [[VideoCapture alloc] init];
-        [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(capImage) userInfo:nil repeats:YES];
+        [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(capImage) userInfo:nil repeats:YES];
     }
     return self;
 }

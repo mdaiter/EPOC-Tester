@@ -82,8 +82,12 @@
 
 //Get data from source
 -(NSNumber*)getDataFromSourceWithEmo:(NSString*)emo{
-    NSLog(@"%@", [NSNumber numberWithDouble:arc4random() % 74]);
-    return [NSNumber numberWithDouble:arc4random() % 74];
+    if ([emo isEqualToString:@"angry"]){
+        return [NSNumber numberWithInt:70];
+    }
+    else{
+        return [NSNumber numberWithInt:1];
+    }
 }
 
 @end
